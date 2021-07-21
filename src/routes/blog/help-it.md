@@ -8,6 +8,7 @@ lang: "Italian"
   import SettingsJpg from "$lib/assets/settings.jpg";
   import SettingsWebp from "$lib/assets/settings.webp";
 </script>
+
 # {title}
 
 Era da qualche settimane che volevo scrivere un nuovo articolo su come usare Svelte con GitHub Pages. Devo ammettere che lo sprone sono state alcune mail con richieste di chiarimenti sul mio [post precedete](https://blog.stranianelli.com/svelte-et-github/). Aggiungo quindi un altro tassello alla mia esplorazione di Svelte parlando di come penso sia possibile usare SvelteKit con GitHub Pages.
@@ -178,7 +179,7 @@ npx svelte-add@latest mdsvex
 
 `mdsvex` mi permette di usare le pagine `markdown` come se fossero dei componenti svelte. Anche come pagine di un router di SvelteKit. C'è un file di configurazione, `mdsvex.config.js`:
 
-```js
+```javascript
 const config = {
   "extensions": [".svelte.md", ".md", ".svx"],
 
@@ -352,3 +353,4 @@ Il blog invece è visibile all'indirizzo
 Ricordo inoltre l'indirizzo del mio Patreon:
 
 - [Patreon](https://www.patreon.com/el3um4s)
+
