@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="/prism.css" rel="stylesheet" />
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-5d97b02c.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-526315b7.js">
+		<link rel="modulepreload" href="/./_app/chunks/preload-helper-13c00eaa.js">
+		<link rel="modulepreload" href="/./_app/layout.svelte-70e0575c.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-4f8b327f.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/help-it.md-eb4b8587.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-5d97b02c.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/layout.svelte-70e0575c.js"),
+						import("/./_app/pages/blog/__layout.svelte-4f8b327f.js"),
+						import("/./_app/pages/blog/help-it.md-eb4b8587.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog/help-it",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<nav><a sveltekit:prefetch href="./">Blog</a>
+	<a sveltekit:prefetch href="../about">About</a>
+    <a sveltekit:prefetch href="../">Home</a></nav>
+
+<h1>SvelteKit &amp; GitHub Pages - Italian</h1>
+<p>Era da qualche settimane che volevo scrivere un nuovo articolo su come usare Svelte con GitHub Pages. Devo ammettere che lo sprone sono state alcune mail con richieste di chiarimenti sul mio <a href="https://blog.stranianelli.com/svelte-et-github/" rel="nofollow">post precedete</a>. Aggiungo quindi un altro tassello alla mia esplorazione di Svelte parlando di come penso sia possibile usare SvelteKit con GitHub Pages.</p>
+<p>Tengo sempre la forma <em>diario di viaggio</em>: riporto qui i passaggi che sto compiendo, sperando sia sufficiente per riprodurre in futuro lo stesso risultato.</p>
+<p>Per prima cosa creo un nuovo progetto basato su <a href="https://kit.svelte.dev/" rel="nofollow">SvelteKit</a> digitando:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> init svelte@next my-app</code><!-- HTML_TAG_END --></pre>
+<p>Installo quindi le varie dipendenze</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> i</code><!-- HTML_TAG_END --></pre>
+<p>Per semplificare la pubblicazione su GitHub Pages uso ancora una volta <a href="https://www.npmjs.com/package/gh-pages" rel="nofollow">gh-pages</a>:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> gh-pages --save-dev</code><!-- HTML_TAG_END --></pre>
+<p>Aggiungo lo script su <code>package.json</code>:</p>
+<pre class="language-json"><!-- HTML_TAG_START --><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+ <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token string">"node ./gh-pages.js"</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>E quindi creo il file gh-pages.js:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> publish <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'gh-pages'</span><span class="token punctuation">;</span>
+
+<span class="token function">publish</span><span class="token punctuation">(</span>
+ <span class="token string">'build'</span><span class="token punctuation">,</span> <span class="token comment">// path to public directory</span>
+ <span class="token punctuation">&#123;</span>
+  branch<span class="token operator">:</span> <span class="token string">'gh-pages'</span><span class="token punctuation">,</span>
+  repo<span class="token operator">:</span> <span class="token string">'https://github.com/el3um4s/memento-sveltekit-and-github-pages.git'</span><span class="token punctuation">,</span> <span class="token comment">// Update to point to your repository</span>
+  user<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+   name<span class="token operator">:</span> <span class="token string">'Samuele de Tomasi'</span><span class="token punctuation">,</span> <span class="token comment">// update to use your name</span>
+   email<span class="token operator">:</span> <span class="token string">'samuele@stranianelli.com'</span> <span class="token comment">// Update to use your email</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  dotfiles<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Deploy Complete!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Per pubblicare su GitHub mi serve l’<a href="%60https://www.npmjs.com/package/@sveltejs/adapter-static%60">adapter-static</a>:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> i -D @sveltejs/adapter-static@next</code><!-- HTML_TAG_END --></pre>
+<p>Aggiorno quindi il file <code>svelte.config.js</code></p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">import</span> preprocess <span class="token keyword">from</span> <span class="token string">'svelte-preprocess'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> adapter <span class="token keyword">from</span> <span class="token string">'@sveltejs/adapter-static'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** @type &#123;import('@sveltejs/kit').Config&#125; */</span>
+<span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+ <span class="token comment">// Consult https://github.com/sveltejs/svelte-preprocess</span>
+ <span class="token comment">// for more information about preprocessors</span>
+ preprocess<span class="token operator">:</span> <span class="token function">preprocess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+ kit<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+ <span class="token comment">// hydrate the &lt;div id="svelte"> element in src/app.html</span>
+  target<span class="token operator">:</span> <span class="token string">'#svelte'</span><span class="token punctuation">,</span>
+  adapter<span class="token operator">:</span> <span class="token function">adapter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// default options are shown</span>
+   pages<span class="token operator">:</span> <span class="token string">'build'</span><span class="token punctuation">,</span>
+   assets<span class="token operator">:</span> <span class="token string">'build'</span><span class="token punctuation">,</span>
+   fallback<span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+ <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> config<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Se eseguo il comando</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> run build</code><!-- HTML_TAG_END --></pre>
+<p>Otterrò una cartella <code>build</code> nella root del progetto. Bene, questa sarà la cartella da caricare su GitHub Pages. Ma prima devo configurare il repository in maniera corretta.</p>
+<picture><source srcset="/_app/assets/settings.dbf20e56.jpg" type="image/webp">
+  <source type="image/jpeg"> 
+  <img src="/_app/assets/settings.dbf20e56.jpg" alt="Settings"></picture>
+<p>Imposto come origine del sito la branch <code>gh-pages</code> e, in caso, imposto un dominio personalizzato.</p>
+<p>Mi servono poi altri 2 file, entrambi da inserire nella cartella <code>static</code>:</p>
+<ul><li><code>.nojekyll</code>, per evitare che sia Jekyll a gestire le pagine create (see <a href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/" rel="nofollow">Bypassing Jekyll on GitHub Pages</a>)</li>
+<li><code>CNAME</code>, per permette a GitHub Pages di usare il dominio personalizzato che ho impostato.</li></ul>
+<p>Il primo file, <code>.nojekyll</code> è un file vuoto. Basta crearlo e non scriverci dentro nulla.</p>
+<p><code>CNAME</code>, invece, contiene una sola riga: il nome del dominio, in questo formato:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">test.stranianelli.com</code><!-- HTML_TAG_END --></pre>
+<p>Fatto questo posso ricompilare il sito con <code>npm run build</code> e poi usare</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> run deploy</code><!-- HTML_TAG_END --></pre>
+<p>per caricarlo online.</p>
+<p>In fase di sviluppo è comodo anche il comando</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> run dev -- --open</code><!-- HTML_TAG_END --></pre>
+<p>Per vedere in tempo reale le modifiche fatte al codice.</p>
+<p>Provo ad aggiungere una nuova pagina, <code>about.svelte</code>. Basta creare un nuovo componente nella cartella <code>src\routes</code>.</p>
+<p>Questo può andare bene per un sito statico. E se invece volessi creare qualcosa di simile ad un blog?</p>
+<p>Qui la questione è un po’ più complicata. Ho trovato alcuni post e video in rete:</p>
+<ul><li><a href="https://svelteland.github.io/svelte-kit-blog-demo" rel="nofollow">SvelteKit Blog</a> - grazie John per il link!</li>
+<li><a href="https://www.youtube.com/playlist?list=PLm_Qt4aKpfKgonq1zwaCS6kOD-nbOKx7V" rel="nofollow">Sveltekit Markdown Blog</a></li>
+<li><a href="https://strapi.io/blog/how-to-create-a-blog-with-svelte-kit-strapi" rel="nofollow">How to Create a Blog with SvelteKit and Strapi</a></li>
+<li><a href="https://dev.to/ladvace/how-to-create-a-blog-with-sveltekit-and-dev-to-api-5h7e" rel="nofollow">How to create a blog with SvelteKit and dev.to API</a></li></ul>
+<p>E altri ancora. Non sono davvero soddisfatto di nessuna delle soluzioni proposte. Ma non ho ancora una mia proposta. Mi limito per il momento a unire alcuni passaggi dei diversi. Devo però fare un ringraziamento particolare a <a href="https://blog.webjeda.com/" rel="nofollow">WebJeda</a> per i suoi video e i suoi post.</p>
+<p>Detto questo, mi serve qualche altro strumento. Per cominciare mi serve <a href="https://github.com/sindresorhus/trash-cli" rel="nofollow">trash-cli</a> per ripulire la cartella <code>build</code> prima di ogni comando <code>npm run build</code></p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> i -D trash-cli</code><!-- HTML_TAG_END --></pre>
+<p>Aggiungo un nuovo script a <code>package.json</code> e aggiorno <code>build</code>:</p>
+<pre class="language-json"><!-- HTML_TAG_START --><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+ <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm run clean &amp;&amp; svelte-kit build"</span><span class="token punctuation">,</span>
+ <span class="token property">"clean"</span><span class="token operator">:</span> <span class="token string">"trash build"</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span></code><!-- HTML_TAG_END --></pre>
+<p>Passo quindi a importare <a href="https://mdsvex.pngwn.io/" rel="nofollow">mdsvex</a></p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> i -D mdsvex</code><!-- HTML_TAG_END --></pre>
+<p>e in successione uso <a href="https://github.com/svelte-add/mdsvex" rel="nofollow">svelte-add/mdsvex</a>:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">npx svelte-add@latest mdsvex</code><!-- HTML_TAG_END --></pre>
+<p><code>mdsvex</code> mi permette di usare le pagine <code>markdown</code> come se fossero dei componenti svelte. Anche come pagine di un router di SvelteKit. C’è un file di configurazione, <code>mdsvex.config.js</code>:</p>
+<pre class="language-javascript"><!-- HTML_TAG_START --><code class="language-javascript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token string">"extensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">".svelte.md"</span><span class="token punctuation">,</span> <span class="token string">".md"</span><span class="token punctuation">,</span> <span class="token string">".svx"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token string">"smartypants"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"dashes"</span><span class="token operator">:</span> <span class="token string">"oldschool"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+  <span class="token string">"remarkPlugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"rehypePlugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> config<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Il file <code>svelte.config.js</code> viene modificato in modo da gestire il markdown:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>
+ mdsvex
+<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"mdsvex"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> mdsvexConfig <span class="token keyword">from</span> <span class="token string">"./mdsvex.config.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> preprocess <span class="token keyword">from</span> <span class="token string">'svelte-preprocess'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> adapter <span class="token keyword">from</span> <span class="token string">'@sveltejs/adapter-static'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** @type &#123;import('@sveltejs/kit').Config&#125; */</span>
+<span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+ <span class="token string">"extensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">".svelte"</span><span class="token punctuation">,</span> <span class="token operator">...</span>mdsvexConfig<span class="token punctuation">.</span>extensions<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  preprocess<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">preprocess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">mdsvex</span><span class="token punctuation">(</span>mdsvexConfig<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  kit<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+   target<span class="token operator">:</span> <span class="token string">'#svelte'</span><span class="token punctuation">,</span>
+   adapter<span class="token operator">:</span> <span class="token function">adapter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+	pages<span class="token operator">:</span> <span class="token string">'build'</span><span class="token punctuation">,</span>
+	assets<span class="token operator">:</span> <span class="token string">'build'</span><span class="token punctuation">,</span>
+	fallback<span class="token operator">:</span> <span class="token keyword">null</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> config<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Come prova posso creare alcuni post di un blog fittizio. Creo la cartella <code>src/routes/blog</code> e dentro inserisco alcuni file <code>.md</code>.</p>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml">file: hello-world.md
+title: Hello World</span>
+<span class="token punctuation">---</span></span>
+
+Hi!</code><!-- HTML_TAG_END --></pre>
+<p>Dopo aver rieseguito <code>npm run dev</code> posso vedere il risultato alla pagina <code>http://localhost:3000/blog/hello-world</code></p>
+<p>La cosa bella è che è possibile usare Svelte dentro il file. Posso per esempio impostare il titolo della pagina con:</p>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md"><span class="token title important"><span class="token punctuation">#</span> &#123;title&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>e usare dei componenti definiti altrove:</p>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+ import Box from "$lib/Box.svelte";
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Box</span> <span class="token punctuation">/></span></span></code><!-- HTML_TAG_END --></pre>
+<p>È invece un po’ più complessa la gestione delle immagini. Non so ancora quale sia il metodo migliore. Uno prevede di inserire tutte le immagini nella cartella <code>static</code> e poi richiamarle da lì:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code><!-- HTML_TAG_END --></pre>
+<p>In alternativa si possono inserire in una cartella dentro <code>lib</code> e poi importarle come componenti:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+ import ImageSrc from "$lib/assets/drums.png";
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>&#123;ImageSrc&#125;</span> <span class="token punctuation">/></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Un altro aspetto da tenere presente quando si crea un blog è la necessità di gestire l’home page in maniera dinamica. Posso ottenere qualcosa di carino creando un componente <code>src/routes/blog/index.svelte</code> e usando la funzione <a href="https://kit.svelte.dev/docs#loading" rel="nofollow">load()</a>.</p>
+<p>Comincio con l’importare nel componente un array con un riferimento a tutti file con estensione <code>md</code> nella cartella:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ const allPosts = import.meta.glob("./**/*.md");
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Estraggo da quell’array le informazioni che mi servono: <code>path</code>, ovvero la posizione del file, e <code>metadata</code>, che non è altro che il contenuto del Frontmatter del file stesso</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ const allPosts = import.meta.glob("./**/*.md");
+ let body = [];
+ for (let path in allPosts) &#123;
+  body.push(
+   allPosts[path]().then( (&#123;metadata&#125;) => &#123;
+    return &#123; path, metadata&#125;
+   &#125;)
+  );  
+ &#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Infine passo al componente quello che mi serve per creare l’indice:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+// ...
+ export async function load() &#123;
+  const posts = await Promise.all(body);
+   return &#123;
+    props: &#123;posts&#125;
+   &#125;
+ &#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Il resto del componente è abbastanza semplice:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+ export let posts;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+ &#123;#each  posts as &#123;path, metadata: &#123;title&#125;&#125; &#125;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+   &lt;a href=&#123;&#96;/blog/$&#123;path.replace(".md","")&#125;&#96;&#125;>&#123;title&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+ &#123;/each&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Un’altra funzione interessante sono i <a href="https://kit.svelte.dev/docs#layouts" rel="nofollow">layouts</a>, ovvero delle specie di template. Per esempio, posso creare un componente <code>src/routes/blog/__layout.svelte</code>:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">sveltekit:</span>prefetch</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Blog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">sveltekit:</span>prefetch</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../about<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">sveltekit:</span>prefetch</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Per inserire un menù di navigazione in ogni pagina del blog.</p>
+<p>Per oggi è tutto. Il codice è disponibile su GitHub:</p>
+<ul><li><a href="https://github.com/el3um4s/memento-sveltekit-and-github-pages" rel="nofollow">MEMENTO - SvelteKit &amp; GitHub Pages</a></li></ul>
+<p>Il blog invece è visibile all’indirizzo</p>
+<p>Ricordo inoltre l’indirizzo del mio Patreon:</p>
+<ul><li><a href="https://www.patreon.com/el3um4s" rel="nofollow">Patreon</a></li></ul>
+
+
+
+	
+</div>
+	</body>
+</html>
