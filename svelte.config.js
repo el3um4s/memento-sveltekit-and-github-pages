@@ -21,7 +21,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		})
+		}),
+		paths: {
+			base: '/memento-sveltekit-and-github-pages'
+		},
 	}
 };
 

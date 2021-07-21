@@ -19,15 +19,15 @@
 </script>
 
 <script>
+    import { base } from '$app/paths';
+
     export let posts;
 </script>
 
 <ul>
     {#each  posts as {path, metadata: {title}} }
         <li>
-            <a href={`/blog/${path.replace(".md","")}`}>{title}</a>
+            <a href={`${base}/blog/${path.replace(".md","")}`}>{title}</a>
         </li>
     {/each}
 </ul>
-
-<p>Thank to <a href="https://blog.webjeda.com"> WebJeda</a>for the <a href="https://www.youtube.com/watch?v=sKKgT0SEioI&list=PLm_Qt4aKpfKgonq1zwaCS6kOD-nbOKx7V&index=1">inspiration</a></p>

@@ -63,7 +63,7 @@ publish(
 );
 ```
 
-Per pubblicare su GitHub mi serve l'[adapter-static](`https://www.npmjs.com/package/@sveltejs/adapter-static`):
+Per pubblicare su GitHub mi serve l'[adapter-static](https://www.npmjs.com/package/@sveltejs/adapter-static):
 
 ```bash
 npm i -D @sveltejs/adapter-static@next
@@ -179,7 +179,7 @@ npx svelte-add@latest mdsvex
 
 `mdsvex` mi permette di usare le pagine `markdown` come se fossero dei componenti svelte. Anche come pagine di un router di SvelteKit. C'è un file di configurazione, `mdsvex.config.js`:
 
-```javascript
+```js
 const config = {
   "extensions": [".svelte.md", ".md", ".svx"],
 
@@ -280,7 +280,7 @@ Comincio con l'importare nel componente un array con un riferimento a tutti file
 </script>
 ```
 
-Estraggo da quell'array le informazioni che mi servono: `path`, ovvero la posizione del file, e `metadata`, che non è altro che il contenuto del Frontmatter del file stesso
+Estraggo da quell'array le informazioni che mi servono: `path`, ovvero la posizione del file, e `metadata`, che non è altro che il contenuto YAML del file stesso
 
 ```html
 <script context="module">
@@ -338,19 +338,59 @@ Un'altra funzione interessante sono i [layouts](https://kit.svelte.dev/docs#layo
 <slot></slot>
 ```
 
-Per inserire un menù di navigazione in ogni pagina del blog.
+Per inserire un menù di sopra ogni pagina del blog.
 
+Un altro aspetto da sistemare riguarda il codice. O, meglio, come appare il codice. `mdsvx` ha la possibilità di applicare degli stili in maniera quasi automatica. Su questo punto non ho trovato molte indicazioni chiare. Per me ha funzionato scaricare uno stile da [prismjs](https://prismjs.com/). Poi ho copiato il file css (che ho chiamato prism.css) nella cartella `static`. Infine ho aggiunto un riferimento al foglio di stile al file `src\app.html`-
 
+```html
+<link href="prism.css" rel="stylesheet" />
+```
 
+In alternativa posso inserire nel layout:
+
+```html
+<svelte:head>
+    <link href="prism.css" rel="stylesheet" />
+</svelte:head>
+```
+
+Un altro problema che può sorgere è legato a dove viene caricato il blog. Se lo carico su un dominio unico, per esempio su `test.stranianelli.com` allora posso accedere alle varie pagine andando su indirizzi simili a `test.stranianelli/blog/first-post`.
+
+Però le cose sono diverse se carico il tutto in una cartella non root. Per poter far funzionare il tutto devo modificare il file `svelte.config.js`, per esempio così:
+
+```js
+kit: {
+		paths: {
+			base: '/memento-sveltekit-and-github-pages'
+		},
+	}
+```
+
+Questo mi permette di configurare meglio i link usando qualcosa di simile a:
+
+```html
+<script>
+    import { base } from '$app/paths';
+
+    export let posts;
+</script>
+
+<ul>
+    {#each  posts as {path, metadata: {title}} }
+        <li>
+            <a href={`${base}/blog/${path.replace(".md","")}`}>{title}</a>
+        </li>
+    {/each}
+</ul>
+```
 
 
 Per oggi è tutto. Il codice è disponibile su GitHub:
 
 - [MEMENTO - SvelteKit & GitHub Pages](https://github.com/el3um4s/memento-sveltekit-and-github-pages)
 
-Il blog invece è visibile all'indirizzo
+Il blog invece è visibile all'indirizzo [el3um4s.github.io/memento-sveltekit-and-github-pages](https://el3um4s.github.io/memento-sveltekit-and-github-pages/).
 
 Ricordo inoltre l'indirizzo del mio Patreon:
 
 - [Patreon](https://www.patreon.com/el3um4s)
-

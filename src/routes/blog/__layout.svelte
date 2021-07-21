@@ -8,15 +8,20 @@
 </script>
 
 <script>
+    import { base } from '$app/paths';
     export let isIndex;
 </script>
 
+<svelte:head>
+    <link href="{`${base}/prism.css`}" rel="stylesheet" />
+</svelte:head>
+
 <nav>
     {#if !isIndex}
-	    <a sveltekit:prefetch href="./">Blog</a>
+	    <a sveltekit:prefetch href="{`${base}/blog`}">Blog</a>
     {/if}
-	<a sveltekit:prefetch href="../about">About</a>
-    <a sveltekit:prefetch href="../">Home</a>
+	<a sveltekit:prefetch href="{`${base}/about`}">About</a>
+    <a sveltekit:prefetch href="{`${base}`}">Home</a>
 </nav>
 
 <slot></slot>
