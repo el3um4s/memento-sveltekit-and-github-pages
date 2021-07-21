@@ -11,9 +11,7 @@
     }
 
     export async function load() {
-		console.log("load")
-        const posts = await Promise.all(body);
-        console.log(posts);
+		const posts = await Promise.all(body);
         return {
             props: {posts}
         }
@@ -22,7 +20,6 @@
 
 <script>
     export let posts;
-
 </script>
 
 <ul>
