@@ -8,12 +8,6 @@ lang: "Italian"
   import SettingsJpg from "$lib/assets/settings.jpg";
   import SettingsWebp from "$lib/assets/settings.webp";
 </script>
-
-<svelte:head>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css">
-</svelte:head>
-
 # {title}
 
 Era da qualche settimane che volevo scrivere un nuovo articolo su come usare Svelte con GitHub Pages. Devo ammettere che lo sprone sono state alcune mail con richieste di chiarimenti sul mio [post precedete](https://blog.stranianelli.com/svelte-et-github/). Aggiungo quindi un altro tassello alla mia esplorazione di Svelte parlando di come penso sia possibile usare SvelteKit con GitHub Pages.
