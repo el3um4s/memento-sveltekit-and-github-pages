@@ -8,17 +8,17 @@
 
 		
 
-		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/start-30374cb2.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/start-69b14aec.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/vendor-3d48a7dc.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/preload-helper-13c00eaa.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/paths-45dac81d.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/layout.svelte-5626d21f.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-a101a8f8.js">
-		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/help-it.md-4ff6d8e9.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/help-it.md-40c72e1a.js">
 		<link rel="stylesheet" href="/memento-sveltekit-and-github-pages/_app/assets/start-a8cd1609.css">
 
 		<script type="module">
-			import { start } from "/memento-sveltekit-and-github-pages/_app/start-30374cb2.js";
+			import { start } from "/memento-sveltekit-and-github-pages/_app/start-69b14aec.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/memento-sveltekit-and-github-pages","assets":"/memento-sveltekit-and-github-pages"},
@@ -33,7 +33,7 @@
 					nodes: [
 						import("/memento-sveltekit-and-github-pages/_app/layout.svelte-5626d21f.js"),
 						import("/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-a101a8f8.js"),
-						import("/memento-sveltekit-and-github-pages/_app/pages/blog/help-it.md-4ff6d8e9.js")
+						import("/memento-sveltekit-and-github-pages/_app/pages/blog/help-it.md-40c72e1a.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -150,7 +150,7 @@
 <p>e in successione uso <a href="https://github.com/svelte-add/mdsvex" rel="nofollow">svelte-add/mdsvex</a>:</p>
 <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">npx svelte-add@latest mdsvex</code><!-- HTML_TAG_END --></pre>
 <p><code>mdsvex</code> mi permette di usare le pagine <code>markdown</code> come se fossero dei componenti svelte. Anche come pagine di un router di SvelteKit. C’è un file di configurazione, <code>mdsvex.config.js</code>:</p>
-<pre class="language-javascript"><!-- HTML_TAG_START --><code class="language-javascript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token string">"extensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">".svelte.md"</span><span class="token punctuation">,</span> <span class="token string">".md"</span><span class="token punctuation">,</span> <span class="token string">".svx"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
   <span class="token string">"smartypants"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
@@ -218,7 +218,7 @@ Hi!</code><!-- HTML_TAG_END --></pre>
 <pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
  const allPosts = import.meta.glob("./**/*.md");
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
-<p>Estraggo da quell’array le informazioni che mi servono: <code>path</code>, ovvero la posizione del file, e <code>metadata</code>, che non è altro che il contenuto del Frontmatter del file stesso</p>
+<p>Estraggo da quell’array le informazioni che mi servono: <code>path</code>, ovvero la posizione del file, e <code>metadata</code>, che non è altro che il contenuto YAML del file stesso</p>
 <pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
  const allPosts = import.meta.glob("./**/*.md");
  let body = [];
@@ -260,10 +260,37 @@ Hi!</code><!-- HTML_TAG_END --></pre>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
-<p>Per inserire un menù di navigazione in ogni pagina del blog.</p>
+<p>Per inserire un menù di sopra ogni pagina del blog.</p>
+<p>Un altro aspetto da sistemare riguarda il codice. O, meglio, come appare il codice. <code>mdsvx</code> ha la possibilità di applicare degli stili in maniera quasi automatica. Su questo punto non ho trovato molte indicazioni chiare. Per me ha funzionato scaricare uno stile da <a href="https://prismjs.com/" rel="nofollow">prismjs</a>. Poi ho copiato il file css (che ho chiamato prism.css) nella cartella <code>static</code>. Infine ho aggiunto un riferimento al foglio di stile al file <code>src\app.html</code>-</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>prism.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code><!-- HTML_TAG_END --></pre>
+<p>In alternativa posso inserire nel layout:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>prism.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>head</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>Un altro problema che può sorgere è legato a dove viene caricato il blog. Se lo carico su un dominio unico, per esempio su <code>test.stranianelli.com</code> allora posso accedere alle varie pagine andando su indirizzi simili a <code>test.stranianelli/blog/first-post</code>.</p>
+<p>Però le cose sono diverse se carico il tutto in una cartella non root. Per poter far funzionare il tutto devo modificare il file <code>svelte.config.js</code>, per esempio così:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">kit<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+	base<span class="token operator">:</span> <span class="token string">'/memento-sveltekit-and-github-pages'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>Questo mi permette di configurare meglio i link usando qualcosa di simile a:</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+    import &#123; base &#125; from '$app/paths';
+
+    export let posts;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+    &#123;#each  posts as &#123;path, metadata: &#123;title&#125;&#125; &#125;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+            &lt;a href=&#123;&#96;$&#123;base&#125;/blog/$&#123;path.replace(".md","")&#125;&#96;&#125;>&#123;title&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    &#123;/each&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
 <p>Per oggi è tutto. Il codice è disponibile su GitHub:</p>
 <ul><li><a href="https://github.com/el3um4s/memento-sveltekit-and-github-pages" rel="nofollow">MEMENTO - SvelteKit &amp; GitHub Pages</a></li></ul>
-<p>Il blog invece è visibile all’indirizzo</p>
+<p>Il blog invece è visibile all’indirizzo <a href="https://el3um4s.github.io/memento-sveltekit-and-github-pages/" rel="nofollow">el3um4s.github.io/memento-sveltekit-and-github-pages</a>.</p>
 <p>Ricordo inoltre l’indirizzo del mio Patreon:</p>
 <ul><li><a href="https://www.patreon.com/el3um4s" rel="nofollow">Patreon</a></li></ul>
 
