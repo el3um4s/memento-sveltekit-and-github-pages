@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-7edfde6d.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-526315b7.js">
+		<link rel="modulepreload" href="/./_app/chunks/preload-helper-13c00eaa.js">
+		<link rel="modulepreload" href="/./_app/layout.svelte-70e0575c.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-34b22a7d.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/index.svelte-bce89c03.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-7edfde6d.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/layout.svelte-70e0575c.js"),
+						import("/./_app/pages/blog/__layout.svelte-34b22a7d.js"),
+						import("/./_app/pages/blog/index.svelte-bce89c03.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<nav><a sveltekit:prefetch href=".">Blog</a>
+	<a sveltekit:prefetch href="../about">About</a>
+    <a sveltekit:prefetch href="../">Home</a></nav>
+
+<ul><li><a href="/blog/./first-post">First Post</a>
+        </li><li><a href="/blog/./second-post">Second Post</a>
+        </li><li><a href="/blog/./third-post">Third Post</a>
+        </li></ul>
+
+<p>Thank to <a href="https://blog.webjeda.com">WebJeda</a>for the <a href="https://www.youtube.com/watch?v=sKKgT0SEioI&list=PLm_Qt4aKpfKgonq1zwaCS6kOD-nbOKx7V&index=1">inspiration</a></p>
+
+
+
+	
+</div>
+	</body>
+</html>
