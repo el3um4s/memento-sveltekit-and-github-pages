@@ -12,7 +12,8 @@
 		<link rel="modulepreload" href="/./_app/chunks/vendor-526315b7.js">
 		<link rel="modulepreload" href="/./_app/chunks/preload-helper-13c00eaa.js">
 		<link rel="modulepreload" href="/./_app/layout.svelte-70e0575c.js">
-		<link rel="modulepreload" href="/./_app/pages/index.svelte-c7720bd7.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-34b22a7d.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/index.svelte-bce89c03.js">
 		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
 
 		<script type="module">
@@ -30,11 +31,12 @@
 					error: null,
 					nodes: [
 						import("/./_app/layout.svelte-70e0575c.js"),
-						import("/./_app/pages/index.svelte-c7720bd7.js")
+						import("/./_app/pages/blog/__layout.svelte-34b22a7d.js"),
+						import("/./_app/pages/blog/index.svelte-bce89c03.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "/",
+						path: "/blog",
 						query: new URLSearchParams(""),
 						params: {}
 					}
@@ -46,10 +48,16 @@
 		<div id="svelte">
 
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<p><a sveltekit:prefetch href="about">ABOUT</a></p>
-<p>Read my <a sveltekit:prefetch href="./blog">BLOG</a></p>
+<nav><a sveltekit:prefetch href=".">Blog</a>
+	<a sveltekit:prefetch href="../about">About</a>
+    <a sveltekit:prefetch href="../">Home</a></nav>
+
+<ul><li><a href="/blog/./first-post">First Post</a>
+        </li><li><a href="/blog/./second-post">Second Post</a>
+        </li><li><a href="/blog/./third-post">Third Post</a>
+        </li></ul>
+
+<p>Thank to <a href="https://blog.webjeda.com">WebJeda</a>for the <a href="https://www.youtube.com/watch?v=sKKgT0SEioI&list=PLm_Qt4aKpfKgonq1zwaCS6kOD-nbOKx7V&index=1">inspiration</a></p>
 
 
 
