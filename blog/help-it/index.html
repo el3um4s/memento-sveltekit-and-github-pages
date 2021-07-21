@@ -9,19 +9,19 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-1bcd7770.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-526315b7.js">
-		<link rel="modulepreload" href="/./_app/chunks/preload-helper-13c00eaa.js">
-		<link rel="modulepreload" href="/./_app/layout.svelte-70e0575c.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-4f8b327f.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/help-it.md-3211abcc.js">
-		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/start-1bcd7770.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/vendor-526315b7.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/preload-helper-13c00eaa.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/layout.svelte-70e0575c.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-4f8b327f.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/help-it.md-3211abcc.js">
+		<link rel="stylesheet" href="/memento-sveltekit-and-github-pages/_app/assets/start-a8cd1609.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-1bcd7770.js";
+			import { start } from "/memento-sveltekit-and-github-pages/_app/start-1bcd7770.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":"/."},
+				paths: {"base":"/memento-sveltekit-and-github-pages","assets":"/memento-sveltekit-and-github-pages"},
 				session: {},
 				host: location.host,
 				route: true,
@@ -31,9 +31,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/layout.svelte-70e0575c.js"),
-						import("/./_app/pages/blog/__layout.svelte-4f8b327f.js"),
-						import("/./_app/pages/blog/help-it.md-3211abcc.js")
+						import("/memento-sveltekit-and-github-pages/_app/layout.svelte-70e0575c.js"),
+						import("/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-4f8b327f.js"),
+						import("/memento-sveltekit-and-github-pages/_app/pages/blog/help-it.md-3211abcc.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -112,9 +112,9 @@
 <p>Se eseguo il comando</p>
 <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">npm</span> run build</code><!-- HTML_TAG_END --></pre>
 <p>Otterrò una cartella <code>build</code> nella root del progetto. Bene, questa sarà la cartella da caricare su GitHub Pages. Ma prima devo configurare il repository in maniera corretta.</p>
-<picture><source srcset="/_app/assets/settings.dbf20e56.jpg" type="image/webp">
+<picture><source srcset="/memento-sveltekit-and-github-pages/_app/assets/settings.dbf20e56.jpg" type="image/webp">
   <source type="image/jpeg"> 
-  <img src="/_app/assets/settings.dbf20e56.jpg" alt="Settings"></picture>
+  <img src="/memento-sveltekit-and-github-pages/_app/assets/settings.dbf20e56.jpg" alt="Settings"></picture>
 <p>Imposto come origine del sito la branch <code>gh-pages</code> e, in caso, imposto un dominio personalizzato.</p>
 <p>Mi servono poi altri 2 file, entrambi da inserire nella cartella <code>static</code>:</p>
 <ul><li><code>.nojekyll</code>, per evitare che sia Jekyll a gestire le pagine create (see <a href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/" rel="nofollow">Bypassing Jekyll on GitHub Pages</a>)</li>
