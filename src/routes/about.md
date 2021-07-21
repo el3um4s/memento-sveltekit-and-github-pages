@@ -11,4 +11,4 @@
 
 <Box />
 
-<p><a sveltekit:prefetch href=".">HOME</a></p>
+<p><a sveltekit:prefetch href="./">HOME</a></p>
