@@ -14,7 +14,8 @@
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/paths-45dac81d.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/layout.svelte-5ee8e921.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-9d357e2d.js">
-		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/index.svelte-50ea2428.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/de-finibus.md-364b632b.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/Image-e22c12c4.js">
 		<link rel="stylesheet" href="/memento-sveltekit-and-github-pages/_app/assets/start-a8cd1609.css">
 
 		<script type="module">
@@ -33,11 +34,11 @@
 					nodes: [
 						import("/memento-sveltekit-and-github-pages/_app/layout.svelte-5ee8e921.js"),
 						import("/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-9d357e2d.js"),
-						import("/memento-sveltekit-and-github-pages/_app/pages/blog/index.svelte-50ea2428.js")
+						import("/memento-sveltekit-and-github-pages/_app/pages/blog/de-finibus.md-364b632b.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "/blog",
+						path: "/blog/de-finibus",
 						query: new URLSearchParams(""),
 						params: {}
 					}
@@ -51,18 +52,17 @@
 
 
 
-<div><nav>
+<div><nav><a sveltekit:prefetch href="/memento-sveltekit-and-github-pages/blog">Blog</a>
         <a sveltekit:prefetch href="/memento-sveltekit-and-github-pages/about">About</a>
         <a sveltekit:prefetch href="/memento-sveltekit-and-github-pages/">Home</a></nav>
     
-    <div><ul><li><a href="/memento-sveltekit-and-github-pages/blog/./de-finibus">de Finibus Bonorum et Malorum</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./hello-world">Hello World</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./help-it">MEMENTO SvelteKit &amp; GitHub Pages</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./image">Component: Image</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./rackham">Rackham</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./section-1-10-33">Section 1.10.33</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./standard">The standard Lorem Ipsum passage</a>
-        </li></ul></div></div>
+    <div><h1>de Finibus Bonorum et Malorum</h1>
+<p><em>Section 1.10.32 of “de Finibus Bonorum et Malorum”, written by Cicero in 45 BC</em></p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<figure><picture><source type="image/webp">
+    <img src="https://source.unsplash.com/random/800x600" alt="Random Image"></picture>
+  <figcaption>Random foto from Unsplash</figcaption></figure>
+<p>Text from <a href="https://www.lipsum.com/" rel="nofollow">Lorem Ipsum</a></p></div></div>
 
 
 

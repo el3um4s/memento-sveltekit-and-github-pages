@@ -14,7 +14,8 @@
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/paths-45dac81d.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/layout.svelte-5ee8e921.js">
 		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-9d357e2d.js">
-		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/index.svelte-50ea2428.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/pages/blog/standard.md-ec870734.js">
+		<link rel="modulepreload" href="/memento-sveltekit-and-github-pages/_app/chunks/Image-e22c12c4.js">
 		<link rel="stylesheet" href="/memento-sveltekit-and-github-pages/_app/assets/start-a8cd1609.css">
 
 		<script type="module">
@@ -33,11 +34,11 @@
 					nodes: [
 						import("/memento-sveltekit-and-github-pages/_app/layout.svelte-5ee8e921.js"),
 						import("/memento-sveltekit-and-github-pages/_app/pages/blog/__layout.svelte-9d357e2d.js"),
-						import("/memento-sveltekit-and-github-pages/_app/pages/blog/index.svelte-50ea2428.js")
+						import("/memento-sveltekit-and-github-pages/_app/pages/blog/standard.md-ec870734.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "/blog",
+						path: "/blog/standard",
 						query: new URLSearchParams(""),
 						params: {}
 					}
@@ -51,18 +52,17 @@
 
 
 
-<div><nav>
+<div><nav><a sveltekit:prefetch href="/memento-sveltekit-and-github-pages/blog">Blog</a>
         <a sveltekit:prefetch href="/memento-sveltekit-and-github-pages/about">About</a>
         <a sveltekit:prefetch href="/memento-sveltekit-and-github-pages/">Home</a></nav>
     
-    <div><ul><li><a href="/memento-sveltekit-and-github-pages/blog/./de-finibus">de Finibus Bonorum et Malorum</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./hello-world">Hello World</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./help-it">MEMENTO SvelteKit &amp; GitHub Pages</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./image">Component: Image</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./rackham">Rackham</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./section-1-10-33">Section 1.10.33</a>
-        </li><li><a href="/memento-sveltekit-and-github-pages/blog/./standard">The standard Lorem Ipsum passage</a>
-        </li></ul></div></div>
+    <div><h1>The standard Lorem Ipsum passage</h1>
+<p><em>used since the 1500s</em></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<figure><picture><source type="image/webp">
+    <img src="https://source.unsplash.com/random/800x600" alt="Random Image"></picture>
+  <figcaption>Random foto from Unsplash</figcaption></figure>
+<p>Text from <a href="https://www.lipsum.com/" rel="nofollow">Lorem Ipsum</a></p></div></div>
 
 
 
