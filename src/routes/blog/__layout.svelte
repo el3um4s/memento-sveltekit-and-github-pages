@@ -1,27 +1,36 @@
 <script context="module">
-    export async function load({ page }) {
+    export const load = async({ page }) => {
         const isIndex = page.path === "/blog/" || page.path === "/blog"
         return {
-            props: {isIndex}
+            props: {
+                isIndex,
+                key: page.path,
+            }
         }
-    }
+    };
 </script>
 
 <script>
     import { base } from '$app/paths';
+    import PageTransition from "$lib/PageTransition.svelte"
     export let isIndex;
+    export let key
 </script>
 
 <svelte:head>
     <link href="{`${base}/prism.css`}" rel="stylesheet" />
 </svelte:head>
 
-<nav>
-    {#if !isIndex}
-	    <a sveltekit:prefetch href="{`${base}/blog`}">Blog</a>
-    {/if}
-	<a sveltekit:prefetch href="{`${base}/about`}">About</a>
-    <a sveltekit:prefetch href="{`${base}`}">Home</a>
-</nav>
-
-<slot></slot>
+<div>
+    <nav>
+        {#if !isIndex}
+            <a sveltekit:prefetch href="{`${base}/blog`}">Blog</a>
+        {/if}
+        <a sveltekit:prefetch href="{`${base}/about`}">About</a>
+        <a sveltekit:prefetch href="{`${base}/`}">Home</a>
+    </nav>
+    
+    <PageTransition refresh={key}>
+       <slot></slot>
+    </PageTransition>
+</div>

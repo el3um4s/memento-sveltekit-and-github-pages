@@ -1,4 +1,4 @@
-# MEMENTO  SvelteKit & GitHub Pages
+# MEMENTO SvelteKit & GitHub Pages
 
 Template to create a blog with SvelteKit **WORK IN PROGRESS**
 

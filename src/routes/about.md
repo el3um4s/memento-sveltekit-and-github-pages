@@ -1,6 +1,7 @@
 # About
 
 <script>
+    import { base } from '$app/paths';
     import Box from "$lib/Box.svelte";
     let count = 10;
 </script>
@@ -11,4 +12,4 @@
 
 <Box />
 
-<p><a sveltekit:prefetch href="./">HOME</a></p>
+<p><a sveltekit:prefetch href="{`${base}/`}">Home</a></p>
