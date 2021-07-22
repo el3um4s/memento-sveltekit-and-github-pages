@@ -1,5 +1,7 @@
 ---
 title: Rackham
+tags:
+  - lorem ipsum
 ---
 
 <script>

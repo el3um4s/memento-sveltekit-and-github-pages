@@ -1,6 +1,8 @@
 ---
 file: hello-world.md
 title: Hello World
+tags:
+  - test
 ---
 
 Hi!

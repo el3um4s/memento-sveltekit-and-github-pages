@@ -1,5 +1,7 @@
 ---
 title: de Finibus Bonorum et Malorum
+tags:
+  - lorem ipsum
 ---
 
 <script>

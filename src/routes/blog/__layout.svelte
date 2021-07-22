@@ -21,16 +21,25 @@
     <link href="{`${base}/prism.css`}" rel="stylesheet" />
 </svelte:head>
 
-<div>
-    <nav>
+<div>   
+    <PageTransition refresh={key}>
+       <slot></slot>
+    </PageTransition>
+
+    <div class="nav">
         {#if !isIndex}
             <a sveltekit:prefetch href="{`${base}/blog`}">Blog</a>
         {/if}
         <a sveltekit:prefetch href="{`${base}/about`}">About</a>
         <a sveltekit:prefetch href="{`${base}/`}">Home</a>
-    </nav>
-    
-    <PageTransition refresh={key}>
-       <slot></slot>
-    </PageTransition>
+    </div>
 </div>
+
+
+<style>
+    .nav a {
+        color: gray;
+        font-size: small;
+    }
+
+</style>

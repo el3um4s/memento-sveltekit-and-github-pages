@@ -1,5 +1,7 @@
 ---
 title: "Component: Image"
+tags:
+  - help
 ---
 
 <script>

@@ -1,5 +1,7 @@
 ---
 title: The standard Lorem Ipsum passage
+tags:
+  - lorem ipsum
 ---
 
 <script>

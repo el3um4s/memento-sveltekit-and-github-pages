@@ -1,5 +1,8 @@
 ---
 title: Section 1.10.33
+tags:
+  - lorem ipsum
+  - test
 ---
 
 <script>
