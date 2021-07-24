@@ -14,10 +14,8 @@ const config = {
 	preprocess: [preprocess(), mdsvex(mdsvexConfig)],
 
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: adapter({
-			// default options are shown
 			pages: 'build',
 			assets: 'build',
 			fallback: null
@@ -26,14 +24,14 @@ const config = {
 			assets: '/memento-sveltekit-and-github-pages',
 			base: '/memento-sveltekit-and-github-pages'
 		},
-		prerender: {
-			crawl: true,
-			enabled: true,
-			force: true,
-			pages: [
-				"*"
-			],
-		}
+		// prerender: {
+		// 	crawl: true,
+		// 	enabled: true,
+		// 	force: false,
+		// 	pages: [
+		// 		"*"
+		// 	],
+		// }
 	}
 };
 

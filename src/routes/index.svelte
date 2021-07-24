@@ -1,11 +1,10 @@
-<script context="module">
-    const allPosts = import.meta.globEager(`../lib/news/**/*.md`);
-    console.log(allPosts);
+<!-- https://www.ryanfiller.com/blog/building-a-better-svelte-data-flow -->
+<!-- // https://vitejs.dev/guide/features.html#glob-import -->
 
+<script context="module">
+    const allPosts = import.meta.globEager(`../news/**/*.md`);
     let body = [];
     for (let path in allPosts) {
-        console.log(path);
-        console.log(allPosts[path]);
         const post = allPosts[path];
         const metadata = post.metadata;
         const namePage = path.split('/');
@@ -13,26 +12,13 @@
         const p = {
             path, metadata, slugPage
         }
-        body.push(p);
-        // body.push(
-        //     allPosts[path]().then( ({metadata}) => {
-        //         const namePage = path.split('/');
-        //         const slugPage = namePage[namePage.length-2].slice(11);
-        //         return { path, metadata, slugPage}
-        //     })
-        // );  
+        body.push(p); 
     }
 
     console.log(body);
     export const load = async () => {
         return { props: {posts: body} }
     }
-    // export async function load() {
-	// 	const posts = await Promise.all(body);
-    //     return {
-    //         props: {posts}
-    //     }
-	// }
 </script>
 
 <script lang="ts">
@@ -63,15 +49,12 @@
 <ul>
     {#each posts as {slugPage, metadata: {title, slug}} }
         <li>
-            <a href={`${base}/${linkSlug(slug, slugPage)}`}>{title}</a>
+            <a href={`${base}/${linkSlug(slug, slugPage)}`} sveltekit:prefetch >{title}</a>
         </li>
     {/each}
 </ul>
 
-
-<style>
-
-    a {
+<style>    a {
         color: #2a2a2a;
     }
     li {
