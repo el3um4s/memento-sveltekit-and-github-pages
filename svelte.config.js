@@ -23,8 +23,17 @@ const config = {
 			fallback: null
 		}),
 		paths: {
+			assets: '/memento-sveltekit-and-github-pages',
 			base: '/memento-sveltekit-and-github-pages'
 		},
+		prerender: {
+			crawl: true,
+			enabled: true,
+			force: true,
+			pages: [
+				"*"
+			],
+		}
 	}
 };
 
