@@ -21,7 +21,7 @@
 
 <script lang="ts">
 	import { base } from '$app/paths';
-	export let posts;
+	export let posts: ArrayLike<{ slugPage: any; metadata: { title: any; slug: any } }>;
 
 	function linkSlug(s: string | undefined, p: string): string {
 		let result = '';
