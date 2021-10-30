@@ -13,7 +13,7 @@
 
 	import PageTransition from '$lib/PageTransition.svelte';
 	import Nav from '$lib/components/Nav.svelte';
-	export let key;
+	export let key: string;
 </script>
 
 <Nav />
