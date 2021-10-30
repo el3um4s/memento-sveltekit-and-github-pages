@@ -1,6 +1,6 @@
 {
 	"name": "memento-sveltekit-and-github-pages",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "npm run clean && svelte-kit build",
@@ -10,26 +10,37 @@
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"deploy": "node ./gh-pages.js",
-		"clean": "trash build"
+		"clean": "trash build",
+		"check-updates": "npx npm-check-updates",
+		"check-updates:minor": "npx npm-check-updates --target minor",
+		"check-updates:patch": "npx npm-check-updates --target patch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.13",
 		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^4.19.0",
-		"@typescript-eslint/parser": "^4.19.0",
-		"eslint": "^7.22.0",
-		"eslint-config-prettier": "^8.1.0",
-		"eslint-plugin-svelte3": "^3.2.0",
+		"@typescript-eslint/eslint-plugin": "^5.2.0",
+		"@typescript-eslint/parser": "^5.2.0",
+		"eslint": "^8.1.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^3.2.1",
 		"gh-pages": "^3.2.3",
 		"mdsvex": "^0.9.8",
-		"prettier": "~2.2.1",
-		"prettier-plugin-svelte": "^2.2.0",
-		"svelte": "^3.34.0",
-		"svelte-check": "^2.0.0",
-		"svelte-preprocess": "^4.0.0",
+		"prettier": "~2.4.1",
+		"prettier-plugin-svelte": "^2.4.0",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.2.8",
+		"svelte-preprocess": "^4.9.8",
 		"trash-cli": "^4.0.0",
-		"tslib": "^2.0.0",
-		"typescript": "^4.0.0"
+		"tslib": "^2.3.1",
+		"typescript": "^4.4.4",
+		"postcss": "^8.3.9",
+		"postcss-load-config": "^3.1.0",
+		"autoprefixer": "^10.3.7",
+		"cssnano": "^5.0.8",
+		"tailwindcss": "^2.2.16"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"tailwindcss": "^2.2.19"
+	}
 }
