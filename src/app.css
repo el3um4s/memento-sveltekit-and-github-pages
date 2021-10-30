@@ -65,25 +65,24 @@
 	a:hover {
 		@apply underline;
 	}
+
+	main::-webkit-scrollbar {
+		@apply w-4;
+	}
+	main::-webkit-scrollbar-track {
+		background-color: var(--text-color);
+	}
+	main::-webkit-scrollbar-thumb {
+		@apply border-2 border-solid;
+		background-color: var(--background-color);
+		border-color: var(--text-color);
+	}
 }
 
 @layer components {
 	.main-center {
-		@apply overflow-y-auto;
 		max-width: 70ch;
 		padding: 1em;
-		height: calc(100% - theme('spacing.2'));
-	}
-	.main-center::-webkit-scrollbar {
-		@apply w-4;
-	}
-	.main-center::-webkit-scrollbar-track {
-		background-color: var(--text-color);
-	}
-	.main-center::-webkit-scrollbar-thumb {
-		@apply border-2 border-solid;
-		background-color: var(--background-color);
-		border-color: var(--text-color);
 	}
 
 	.link-no-underline {

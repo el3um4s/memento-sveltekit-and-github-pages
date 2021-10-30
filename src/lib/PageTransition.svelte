@@ -4,9 +4,7 @@
 </script>
 
 {#key refresh}
-	<section class="main-center" in:blur>
-		<div>
-			<slot />
-		</div>
-	</section>
+	<div class="main-center" in:blur>
+		<slot />
+	</div>
 {/key}
