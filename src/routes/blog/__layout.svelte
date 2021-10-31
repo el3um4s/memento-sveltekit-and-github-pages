@@ -1,4 +1,7 @@
 <script context="module">
+	import 'prismjs';
+	// import 'prismjs/themes/prism.css';
+
 	export const load = async ({ page }) => {
 		const isIndex = page.path === '/blog/' || page.path === '/blog';
 		return {
@@ -11,15 +14,12 @@
 </script>
 
 <script>
-	import { base } from '$app/paths';
 	import PageTransition from '$lib/PageTransition.svelte';
 	export let isIndex;
 	export let key;
-</script>
 
-<svelte:head>
-	<link href={`${base}/prism.css`} rel="stylesheet" />
-</svelte:head>
+	import 'prism-themes/themes/prism-dracula.css';
+</script>
 
 <PageTransition refresh={key}>
 	<slot />

@@ -1,5 +1,5 @@
 ---
-title: "MEMENTO SvelteKit & GitHub Pages"
+title: 'MEMENTO SvelteKit & GitHub Pages'
 tags:
   - help
   - test
