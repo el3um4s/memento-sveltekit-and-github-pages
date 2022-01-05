@@ -1,8 +1,8 @@
 <script context="module">
-	export const load = async ({ page }) => {
+	export const load = async ({ url }) => {
 		return {
 			props: {
-				key: page.path
+				key: url.pathname
 			}
 		};
 	};

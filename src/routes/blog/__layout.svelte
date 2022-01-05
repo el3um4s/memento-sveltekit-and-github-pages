@@ -1,13 +1,10 @@
 <script context="module">
 	import 'prismjs';
-	// import 'prismjs/themes/prism.css';
-
-	export const load = async ({ page }) => {
-		const isIndex = page.path === '/blog/' || page.path === '/blog';
+	export const load = async ({ url }) => {
+		const isIndex = url.pathname === '/blog/' || url.pathname === '/blog';
 		return {
 			props: {
-				isIndex,
-				key: page.path
+				key: url.pathname
 			}
 		};
 	};
@@ -15,7 +12,6 @@
 
 <script>
 	import PageTransition from '$lib/PageTransition.svelte';
-	export let isIndex;
 	export let key;
 
 	import 'prism-themes/themes/prism-dracula.css';

@@ -27,7 +27,7 @@ const config = {
 		}),
 		// ssr: false,
 		paths: {
-			assets: '/memento-sveltekit-and-github-pages',
+			// assets: '/memento-sveltekit-and-github-pages',
 			base: '/memento-sveltekit-and-github-pages'
 		}
 		// prerender: {

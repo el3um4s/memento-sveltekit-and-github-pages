@@ -10,9 +10,9 @@
 		);
 	}
 
-	export async function load({ page }) {
+	export async function load({ params }) {
 		const posts = await Promise.all(body);
-		const tag = page.params.tag;
+		const tag = params.tag;
 
 		const filteredPosts = posts.filter((p) => p.metadata.tags.includes(tag));
 
