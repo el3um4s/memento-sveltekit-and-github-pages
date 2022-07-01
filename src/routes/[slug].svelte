@@ -1,5 +1,5 @@
 <script context="module">
-	export const ssr = false;
+	// export const ssr = false;
 	const allPosts = import.meta.globEager(`../news/**/*.md`);
 	let body = [];
 
