@@ -4,7 +4,7 @@
 
 <nav>
 	<!-- Title -->
-	<a href={config.url} class="title">
+	<a href="./" class="title">
 		<b>{config.title}</b>
 		<!-- <img src="./assets/logo.svg" alt="" /> -->
 	</a>
