@@ -1,0 +1,1 @@
+import{i as p,d as t,o as r,e as s}from"../chunks/disclose-version.BygveJpS.js";import{a as f,b as n}from"../chunks/runtime.CmUbHjSU.js";var i=s("<h1>Contact</h1> <p>New phone, who dis?</p>",!0);function h(a,e){n(e,!1),p();var o=r(a,!0,i);t(a,o),f()}export{h as component};

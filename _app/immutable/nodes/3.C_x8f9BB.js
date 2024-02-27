@@ -1,1 +1,0 @@
-import{i as t,d as p,o as r,e as s}from"../chunks/disclose-version.C4N9ZDeY.js";import{a as f,b as n}from"../chunks/runtime.CN7zOTHr.js";var i=s("<h1>About</h1> <p>I like long walks on the beach.</p>",!0);function l(a,e){n(e,!1),t();var o=r(a,!0,i);p(a,o),f()}export{l as component};
