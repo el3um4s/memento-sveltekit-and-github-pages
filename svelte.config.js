@@ -1,41 +1,84 @@
-import {
-	mdsvex
-} from 'mdsvex';
-import mdsvexConfig from './mdsvex.config.js';
-import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { importAssets } from 'svelte-preprocess-import-assets';
+
+import { mdsvex, escapeSvelte } from 'mdsvex';
+
+import { getHighlighter } from 'shiki';
+
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
+
+/** @type {import('mdsvex').MdsvexOptions} */
+const mdsvexOptions = {
+	extensions: ['.md'],
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const highlighter = await getHighlighter({
+				themes: ['poimandres'],
+				langs: ['javascript', 'typescript']
+			});
+			await highlighter.loadLanguage('javascript', 'typescript');
+			const html = escapeSvelte(
+				highlighter.codeToHtml(code, {
+					lang,
+					theme: 'poimandres'
+				})
+			);
+			return `{@html \`${html}\` }`;
+		}
+	},
+	layout: {
+		_: './src/mdsvex.svelte'
+	},
+	remarkPlugins: [
+		remarkUnwrapImages,
+		[
+			remarkToc,
+			{
+				tight: true
+			}
+		]
+	],
+	rehypePlugins: [rehypeSlug]
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', ...mdsvexConfig.extensions],
-
-	// Consult https://github.com/sveltejs/svelte-preprocess
+	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
+	extensions: ['.svelte', '.md'],
 	preprocess: [
-		preprocess({
-			postcss: true
-		}),
-		mdsvex(mdsvexConfig)
+		vitePreprocess(),
+		mdsvex(mdsvexOptions),
+		importAssets({
+			sources: (default_sources) => {
+				return [
+					...default_sources,
+					{
+						tag: `a`,
+						srcAttributes: [`href`],
+						filter: (node) => node.attributes?.href.endsWith(`.pdf`)
+					}
+				];
+			}
+		})
 	],
 
 	kit: {
-		// target: '#svelte',
+		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
+		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
+		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null
+			fallback: '404.html'
 		}),
-		// ssr: false,
 		paths: {
-			// assets: '/memento-sveltekit-and-github-pages',
-			base: '/memento-sveltekit-and-github-pages'
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		},
-		prerender: {
-			crawl: true,
-			enabled: true,
-			onError: 'continue',
-			default: true
-		},
+		alias: {
+			$root: `.`
+		}
 	}
 };
 

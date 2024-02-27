@@ -1,0 +1,71 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+	--color: #4c3f39;
+	--color-background: #ede8d5;
+	--color-menu: #8c5f4c;
+	--color-menu-hover: #ce7f32;
+}
+
+@layer base {
+	* {
+		@apply m-0 p-0 border-0 align-baseline;
+	}
+
+	html,
+	body {
+		@apply font-notoSerif antialiased flex flex-col relative m-0 box-border p-0;
+		@apply bg-[color:var(--color-background)] text-[color:var(--color)];
+		scrollbar-width: thin;
+		scrollbar-color: var(--color) var(--color-menu);
+	}
+
+	body::-webkit-scrollbar {
+		width: 11px;
+	}
+	body::-webkit-scrollbar-track {
+		background: var(--color-menu);
+	}
+	body::-webkit-scrollbar-thumb {
+		background-color: var(--color);
+		border-radius: 6px;
+		border: 3px solid var(--color-menu);
+	}
+
+	h1 {
+		@apply text-3xl font-semibold font-notoSans;
+	}
+
+	h2,
+	h3,
+	h4 {
+		@apply font-notoSans;
+	}
+
+	p {
+		@apply m-2;
+	}
+
+	a,
+	a:visited {
+		@apply p-1 rounded-lg no-underline text-[color:var(--color-menu-hover)];
+	}
+
+	a:hover {
+		@apply no-underline bg-[color:var(--color-menu-hover)] text-[color:var(--color-menu)] cursor-pointer;
+	}
+
+	button {
+		@apply py-2 px-4 font-semibold p-2 rounded border border-[color:var(--color)];
+	}
+
+	/* header {
+    @apply flex flex-row justify-between items-center p-2 sticky top-0 left-0 right-0 z-50;
+  } */
+
+	main {
+		@apply w-full max-w-4xl mx-auto p-4;
+	}
+}
