@@ -9,7 +9,7 @@ categories:
 published: true
 ---
 
-![Immagine che contiene testo, Carattere, numero, linea Descrizione generata automaticamente](./c8185e32e5ecaa63c075f034b40a8d90.png)
+![Immagine che contiene testo, schermata, software, Software multimediale Descrizione generata automaticamente](./9be16c3b1799ea7396ee9beaae6a1446.png)
 
 ```js
 import { simpleGit } from 'simple-git';
