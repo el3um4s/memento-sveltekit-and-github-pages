@@ -5,6 +5,7 @@
 	"scripts": {
 		"clean": "node clean-build.js",
 		"copy-drafts": "node copy-drafts.js",
+		"commit": "node commit.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -36,6 +37,7 @@
 		"postcss": "^8.4.35",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
+		"simple-git": "^3.22.0",
 		"svelte": "^5.0.0-next.1",
 		"svelte-check": "^3.6.0",
 		"svelte-preprocess-import-assets": "^1.1.0",
