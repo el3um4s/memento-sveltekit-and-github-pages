@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
 
+	import * as config from '$lib/config';
+	import { dev } from '$app/environment';
 	export let data;
 </script>
 
@@ -23,6 +25,22 @@
 		{#each data.meta.categories as category}
 			<span class="surface-4">&num;{category}</span>
 		{/each}
+	</div>
+
+	<div class="cover-image">
+		{#if data.meta.cover}
+			{#if dev}
+				{#await import(/* @vite-ignore */ `/src/posts/${data.url}/${data.meta.cover}`) then { default: src }}
+					<img {src} alt="" loading="lazy" />
+				{/await}
+			{:else}
+				<img
+					src="{config.repository}/raw/main/src/posts/{data.url}/{data.meta.cover}"
+					alt=""
+					loading="lazy"
+				/>
+			{/if}
+		{/if}
 	</div>
 
 	<!-- Post -->

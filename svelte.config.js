@@ -59,7 +59,8 @@ const config = {
 					{
 						tag: `a`,
 						srcAttributes: [`href`],
-						filter: (node) => node.attributes?.href.endsWith(`.pdf`)
+						filter: (node) =>
+							node.attributes?.href.endsWith(`.pdf`) || node.attributes?.href.endsWith(`.txt`)
 					}
 				];
 			}
