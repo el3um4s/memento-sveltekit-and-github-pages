@@ -17,10 +17,22 @@
 	html,
 	body {
 		@apply font-notoSans antialiased flex flex-col relative m-0 box-border p-0 text-lg;
-		@apply bg-[color:var(--color-background)] text-[color:var(--color)];
-		scrollbar-width: thin;
-		scrollbar-color: var(--color) var(--color-menu);
+		@apply bg-slate-50 text-gray-900 dark:bg-slate-950 dark:text-slate-50;
+		/* scrollbar-width: thin; */
+		/* scrollbar-color: var(--color) var(--color-menu); */
 	}
+
+	/* body::-webkit-scrollbar {
+		width: 11px;
+	}
+	body::-webkit-scrollbar-track {
+		background: var(--color-menu);
+	}
+	body::-webkit-scrollbar-thumb {
+		background-color: var(--color);
+		border-radius: 6px;
+		border: 3px solid var(--color-menu);
+	} */
 
 	/* header {
 		@apply bg-red-400;
@@ -33,18 +45,6 @@
 	.content {
 		@apply bg-blue-300;
 	} */
-
-	body::-webkit-scrollbar {
-		width: 11px;
-	}
-	body::-webkit-scrollbar-track {
-		background: var(--color-menu);
-	}
-	body::-webkit-scrollbar-thumb {
-		background-color: var(--color);
-		border-radius: 6px;
-		border: 3px solid var(--color-menu);
-	}
 
 	h1 {
 		@apply text-3xl font-semibold font-notoSerif;
@@ -60,14 +60,23 @@
 		@apply m-2;
 	}
 
-	a,
+	/* a,
 	a:visited {
 		@apply p-1 rounded-lg no-underline text-[color:var(--color-menu-hover)];
+	} */
+
+	a,
+	a:visited {
+		@apply p-1 rounded-lg no-underline;
 	}
 
 	a:hover {
-		@apply no-underline bg-[color:var(--color-menu-hover)] text-[color:var(--color-menu)] cursor-pointer;
+		@apply no-underline cursor-pointer bg-slate-100 text-orange-500;
 	}
+
+	/* a:hover {
+		@apply no-underline bg-[color:var(--color-menu-hover)] text-[color:var(--color-menu)] cursor-pointer;
+	} */
 
 	button {
 		@apply py-2 px-4 font-semibold p-2 rounded border border-[color:var(--color)];
@@ -80,6 +89,33 @@
 	main {
 		/* @apply w-full max-w-4xl mx-auto p-4; */
 		@apply w-full max-w-6xl mx-auto p-4;
+	}
+
+	header {
+		@apply bg-white shadow-md sticky top-0 left-0 right-0 z-50;
+		nav {
+			@apply flex items-center justify-between p-4;
+		}
+		.title > span {
+			@apply font-bold text-lg hidden sm:block;
+		}
+
+		.search {
+			@apply hidden md:block;
+			input {
+				@apply px-4 py-2 border rounded-lg;
+			}
+		}
+
+		ul {
+			@apply flex items-center space-x-4;
+		}
+		a {
+			@apply flex items-center;
+			span {
+				@apply hidden sm:block ml-2;
+			}
+		}
 	}
 
 	.single-post {
@@ -119,6 +155,10 @@
 			@apply w-full max-w-4xl mx-auto px-4 py-4 sm:p-4;
 			p {
 				@apply my-6;
+			}
+			a {
+				@apply border-b-2 border-dotted border-b-orange-300;
+				/* border-bottom: dotted 1px; */
 			}
 		}
 	}

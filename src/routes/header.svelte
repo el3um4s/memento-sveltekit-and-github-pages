@@ -8,43 +8,39 @@
 	import Logo from '$lib/icons/logo.svelte';
 </script>
 
-<header class="bg-white shadow-md sticky top-0 left-0 right-0 z-50">
-	<nav class="flex items-center justify-between p-4">
+<header>
+	<nav>
 		<!-- Title -->
-		<a href="{base}/" class="flex items-center title">
-			<!-- <img src="path_to_your_logo.svg" alt="Logo" class="mr-2 w-6 h-6" /> -->
+		<a href="{base}/" class="title">
 			<Logo />
-			<span class="font-bold text-lg hidden sm:block">{config.title}</span>
+			<span>{config.title}</span>
 		</a>
 
 		<!-- Search Box -->
-		<div class="hidden md:block">
-			<input type="search" placeholder="Search..." class="px-4 py-2 border rounded-lg" />
+		<div class="search">
+			<input type="search" placeholder="Search..." />
 		</div>
 
 		<!-- Navigation -->
-		<ul class="flex items-center space-x-4">
+		<ul>
 			<li>
-				<a href="{base}/about" class="flex items-center">
-					<!-- <img src="path_to_about_icon.svg" alt="About" class="w-6 h-6" /> -->
+				<a href="{base}/about">
 					<About />
-					<span class="hidden sm:block ml-2">About</span>
+					<span>About</span>
 				</a>
 			</li>
 			<li>
-				<a href="{base}/contact" class="flex items-center">
-					<!-- <img src="path_to_contact_icon.svg" alt="Contact" class="w-6 h-6" /> -->
+				<a href="{base}/contact">
 					<Contact />
-					<span class="hidden sm:block ml-2">Contact</span>
+					<span>Contact</span>
 				</a>
 			</li>
-			<li>
-				<a href="{base}/rss.xml" target="_blank" class="flex items-center">
-					<!-- <img src="path_to_rss_icon.svg" alt="RSS" class="w-6 h-6" /> -->
+			<!-- <li>
+				<a href="{base}/rss.xml" target="_blank">
 					<RSS />
-					<span class="hidden sm:block ml-2">RSS</span>
+					<span>RSS</span>
 				</a>
-			</li>
+			</li> -->
 		</ul>
 	</nav>
 </header>
