@@ -10,6 +10,15 @@
 	<title>{data.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
+	{#if data.meta.cover}
+		<meta
+			property="og:image"
+			content="{config.repository}/raw/main/src/posts/{data.url}/{data.meta.cover}"
+			data-rh="true"
+		/>
+	{/if}
+	<meta name="author" content="Samuele C. De Tomasi" data-rh="true" />
+	<meta name="robots" content="index,follow,max-image-preview:large" data-rh="true" />
 </svelte:head>
 
 <article class="single-post">
