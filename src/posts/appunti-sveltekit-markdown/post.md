@@ -1,5 +1,5 @@
 ---
-title: 'Appunti Markdown & Sveltekit'
+title: 'Appunti Markdown & Sveltekit - LINK'
 description: 'Appunti vari'
 date: '2024-03-01'
 categories:
@@ -18,3 +18,5 @@ cover: appunti.png
 7. https://github.com/KTruong008/sveltekit-markdown-blog
 8. [Let's learn SvelteKit by building a static Markdown blog from scratch](https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog)
 9. https://github.com/janosh/blog
+
+![d05cb964637931345c15b3aa8cffb14d.png](./d05cb964637931345c15b3aa8cffb14d.png)
