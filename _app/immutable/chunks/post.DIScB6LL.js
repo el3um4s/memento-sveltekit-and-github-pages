@@ -1,33 +1,4 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<link rel="alternate" type="application/atom+xml" href="/rss.xml" />
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		
-		<link href="./_app/immutable/assets/0.Cs9jFYuB.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.B1GBpr0l.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.BaA4xzT_.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/runtime.C65tfZF7.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.C6Bgn6hT.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/control.CYgJF_JY.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.BYhJN_Py.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.B32Rwxm5.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.Brd39H6e.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.Br2mmlal.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/config.gC28cI-t.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/5.bdh7__eN.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/utils.FvE9RtxI.js"><title>AutoCommit</title><!--ssr:0--><meta property="og:type" content="article"> <meta property="og:title" content="AutoCommit"><!--ssr:0-->
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--ssr:0--><!--ssr:1--><!--ssr:if:true--><!--ssr:3--><div class="layout"><!--ssr:4--><header class="bg-white shadow-md sticky top-0 left-0 right-0 z-50"><nav class="flex items-center justify-between p-4"><a href="./" class="flex items-center title"><!--ssr:6--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve" fill="none" stroke-width="3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="w-10 h-10"><path d="M30,30
-	c0,8.008-6.492,14.5-14.5,14.5S1,38.008,1,30s6.492-14.5,14.5-14.5c2.983,0,5.757,0.901,8.062,2.446
-	c0.796,0.533,1.536,1.143,2.21,1.82"></path><path d="M30,30
-	c0-8.008,6.492-14.5,14.5-14.5S59,21.992,59,30s-6.492,14.5-14.5,14.5c-4.003,0-7.627-1.622-10.251-4.245"></path></svg><!--ssr:6--> <span class="font-bold text-lg hidden sm:block">Strani Anelli</span></a> <div class="hidden md:block"><input type="search" placeholder="Search..." class="px-4 py-2 border rounded-lg"></div> <ul class="flex items-center space-x-4"><li><a href="./about" class="flex items-center"><!--ssr:7--><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path></svg><!--ssr:7--> <span class="hidden sm:block ml-2">About</span></a></li> <li><a href="./contact" class="flex items-center"><!--ssr:8--><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"></path></svg><!--ssr:8--> <span class="hidden sm:block ml-2">Contact</span></a></li> <li><a href="./rss.xml" target="_blank" class="flex items-center"><!--ssr:9--><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 0 0-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"></path></svg><!--ssr:9--> <span class="hidden sm:block ml-2">RSS</span></a></li></ul></nav></header><!--ssr:4--> <main><!--ssr:5--><!--ssr:10--><div class="content svelte-11scauo"><!--ssr:11--><!--ssr:12--><!--ssr:13--><article><hgroup><h1>AutoCommit</h1> <p>Published at May 5, 2024</p></hgroup> <div class="tags"><!--ssr:14--><!--ssr:17--><span class="surface-4">#Filosofia Classica</span><!--ssr:17--><!--ssr:18--><span class="surface-4">#Filosofia Moderna</span><!--ssr:18--><!--ssr:14--></div> <div class="cover-image"><!--ssr:15--><!--ssr:if:true--><!--ssr:19--><!--ssr:if:false--><img src="https://github.com/el3um4s/memento-sveltekit-and-github-pages/raw/main/src/posts//auto-commit/c8185e32e5ecaa63c075f034b40a8d90.png" alt="" loading="lazy"><!--ssr:19--><!--ssr:15--></div> <div class="prose"><!--ssr:16--><!--ssr:20--><!--ssr:21--><img src="/_app/immutable/assets/9be16c3b1799ea7396ee9beaae6a1446.GgNMZAzh.png" alt="Immagine che contiene testo, schermata, software, Software multimediale Descrizione generata automaticamente"> <!--ssr:22--><pre class="shiki poimandres" style="background-color:#1b1e28;color:#a6accd" tabindex="0"><code><span class="line"><span style="color:#5DE4C7">import </span><span style="color:#A6ACCD">&#123;</span><span style="color:#ADD7FF"> simpleGit</span><span style="color:#A6ACCD"> &#125;</span><span style="color:#A6ACCD"> from</span><span style="color:#A6ACCD"> '</span><span style="color:#5DE4C7">simple-git</span><span style="color:#A6ACCD">'</span><span style="color:#A6ACCD">;</span></span>
+import{r as y,i as D,s as i,c as e,a as r,p as F,C as E,d as B,o as m,t as d,v as t}from"./disclose-version.Brd39H6e.js";import{p as f,a as g}from"./runtime.C65tfZF7.js";import{M as u}from"./mdsvex.DNalNMCX.js";const h=""+new URL("../assets/9be16c3b1799ea7396ee9beaae6a1446.GgNMZAzh.png",import.meta.url).href;var _=d('<img alt="Immagine che contiene testo, schermata, software, Software multimediale Descrizione generata automaticamente"> <!>',!0);const v={title:"AutoCommit",description:"AutoCommit",date:"2024-05-05",cover:"c8185e32e5ecaa63c075f034b40a8d90.png",categories:["Filosofia Classica","Filosofia Moderna"],published:!0};function k(s,a){const c=y(a,["children","$$slots","$$events"]);g(a,!1),D();var n=B(s),C=r(n);u(C,i(()=>c,v,{children:(l,b)=>{var p=m(l,!0,_),o=r(p);F(o,"src",h);var A=t(t(o,!0));E(A,()=>`<pre class="shiki poimandres" style="background-color:#1b1e28;color:#a6accd" tabindex="0"><code><span class="line"><span style="color:#5DE4C7">import </span><span style="color:#A6ACCD">&#123;</span><span style="color:#ADD7FF"> simpleGit</span><span style="color:#A6ACCD"> &#125;</span><span style="color:#A6ACCD"> from</span><span style="color:#A6ACCD"> '</span><span style="color:#5DE4C7">simple-git</span><span style="color:#A6ACCD">'</span><span style="color:#A6ACCD">;</span></span>
 <span class="line"><span style="color:#5DE4C7">import </span><span style="color:#ADD7FF">path</span><span style="color:#A6ACCD"> from</span><span style="color:#A6ACCD"> '</span><span style="color:#5DE4C7">path</span><span style="color:#A6ACCD">'</span><span style="color:#A6ACCD">;</span></span>
 <span class="line"><span style="color:#5DE4C7">import </span><span style="color:#ADD7FF">fs</span><span style="color:#A6ACCD"> from</span><span style="color:#A6ACCD"> '</span><span style="color:#5DE4C7">fs</span><span style="color:#A6ACCD">'</span><span style="color:#A6ACCD">;</span></span>
 <span class="line"></span>
@@ -71,31 +42,4 @@
 <span class="line"><span style="color:#E4F0FB">		console</span><span style="color:#A6ACCD">.</span><span style="color:#E4F0FBD0">log</span><span style="color:#A6ACCD">(</span><span style="color:#E4F0FB">a</span><span style="color:#A6ACCD">, </span><span style="color:#E4F0FB">b</span><span style="color:#A6ACCD">);</span></span>
 <span class="line"><span style="color:#A6ACCD">	&#125;)</span></span>
 <span class="line"><span style="color:#A6ACCD">	.</span><span style="color:#E4F0FBD0">push</span><span style="color:#A6ACCD">()</span></span>
-<span class="line"><span style="color:#A6ACCD">	.</span><span style="color:#E4F0FBD0">exec</span><span style="color:#A6ACCD">(() </span><span style="color:#91B4D5">=></span><span style="color:#E4F0FB"> console</span><span style="color:#A6ACCD">.</span><span style="color:#E4F0FBD0">log</span><span style="color:#A6ACCD">(</span><span style="color:#A6ACCD">'</span><span style="color:#5DE4C7">Push done.</span><span style="color:#A6ACCD">'</span><span style="color:#A6ACCD">));</span></span></code></pre><!--ssr:22--><!--ssr:21--><!--ssr:20--><!--ssr:16--></div></article><!--ssr:13--><!--ssr:12--><!--ssr:11--></div><!--ssr:10--><!--ssr:5--></main></div><!--ssr:3--><!--ssr:1--> <!--ssr:2--><!--ssr:if:false--><!--ssr:2--><!--ssr:0-->
-			
-			<script>
-				{
-					__sveltekit_zlgebj = {
-						base: new URL(".", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					const data = [null,null];
-
-					Promise.all([
-						import("./_app/immutable/entry/start.B1GBpr0l.js"),
-						import("./_app/immutable/entry/app.BYhJN_Py.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 5],
-							data,
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-	</body>
-</html>
+<span class="line"><span style="color:#A6ACCD">	.</span><span style="color:#E4F0FBD0">exec</span><span style="color:#A6ACCD">(() </span><span style="color:#91B4D5">=></span><span style="color:#E4F0FB"> console</span><span style="color:#A6ACCD">.</span><span style="color:#E4F0FBD0">log</span><span style="color:#A6ACCD">(</span><span style="color:#A6ACCD">'</span><span style="color:#5DE4C7">Push done.</span><span style="color:#A6ACCD">'</span><span style="color:#A6ACCD">));</span></span></code></pre>`,!1),e(l,p)}})),e(s,n),f()}export{k as default,v as metadata};
