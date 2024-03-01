@@ -38,8 +38,8 @@ git
 	.addConfig('user.mail', 'samuele@stranianelli.com')
 	.addConfig('user.branch', 'main')
 	.add(gitRootPath())
-	.commit('commit', () => {
-		// console.log(a, b);
+	.commit('commit', (a, b) => {
+		console.log(a, b);
 	})
 	.push()
 	.exec(() => console.log('Push done.'));
