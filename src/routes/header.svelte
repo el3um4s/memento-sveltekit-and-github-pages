@@ -8,26 +8,6 @@
 	import Logo from '$lib/icons/logo.svelte';
 </script>
 
-<!-- <header>
-	<nav>
-		<a href="{base}/" class="title">
-			<b>{config.title}</b>
-		</a>
-
-		<ul class="links">
-			<li>
-				<a href="{base}/about">About</a>
-			</li>
-			<li>
-				<a href="{base}/contact">Contact</a>
-			</li>
-			<li>
-				<a href="{base}/rss.xml" target="_blank">RSS</a>
-			</li>
-		</ul>
-	</nav>
-</header> -->
-
 <header class="bg-white shadow-md sticky top-0 left-0 right-0 z-50">
 	<nav class="flex items-center justify-between p-4">
 		<!-- Title -->

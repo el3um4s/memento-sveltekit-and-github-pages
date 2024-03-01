@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
-
 	import * as config from '$lib/config';
 	import { dev } from '$app/environment';
 	export let data;
@@ -13,38 +12,49 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article>
+<article class="single-post">
 	<!-- Title -->
 	<hgroup>
-		<h1>{data.meta.title}</h1>
-		<p>Published at {formatDate(data.meta.date)}</p>
+		<p class="kicker">kicker</p>
+		<h1 class="title">
+			{data.meta.title}
+		</h1>
+		{#if data.meta.description}
+			<h2 class="description">
+				{data.meta.description}
+			</h2>
+		{/if}
+		<p class="date">
+			Published at {formatDate(data.meta.date)}
+		</p>
 	</hgroup>
 
 	<!-- Tags -->
 	<div class="tags">
 		{#each data.meta.categories as category}
-			<span class="surface-4">&num;{category}</span>
+			<span class="tag">&num;{category}</span>
 		{/each}
 	</div>
 
-	<div class="cover-image">
-		{#if data.meta.cover}
+	<!-- Cover Image -->
+	{#if data.meta.cover}
+		<div class="cover-image w-full">
 			{#if dev}
 				{#await import(/* @vite-ignore */ `/src/posts/${data.url}/${data.meta.cover}`) then { default: src }}
-					<img {src} alt="" loading="lazy" />
+					<img {src} alt={data.meta.title} loading="lazy" />
 				{/await}
 			{:else}
 				<img
 					src="{config.repository}/raw/main/src/posts/{data.url}/{data.meta.cover}"
-					alt=""
+					alt={data.meta.title}
 					loading="lazy"
 				/>
 			{/if}
-		{/if}
-	</div>
+		</div>
+	{/if}
 
 	<!-- Post -->
-	<div class="prose">
+	<div class="post-text">
 		<svelte:component this={data.content} />
 	</div>
 </article>
