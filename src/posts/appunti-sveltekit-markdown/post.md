@@ -6,6 +6,7 @@ categories:
   - Filosofia della Mente
   - Coscienza
 published: true
+cover: appunti.png
 ---
 
 1. [Build a Blog with Sveltekit and Markdown](https://dev.to/kylebuildsstuff/building-a-blog-with-sveltekit-and-markdown-2oaa)
