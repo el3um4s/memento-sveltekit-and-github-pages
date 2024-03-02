@@ -7,6 +7,7 @@ categories:
   - Vita Moderna
 published: true
 cover: epicureismo.png
+kicker: Filosofia
 ---
 
 L'Epicureismo e lo Stoicismo, due scuole di pensiero dell'antica Grecia e Roma, offrono lezioni di vita ancora rilevanti nel mondo moderno. In questo post, esploriamo come questi insegnamenti antichi possono essere applicati oggi.

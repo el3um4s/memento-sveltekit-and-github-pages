@@ -7,6 +7,7 @@ categories:
   - Arte
 published: true
 cover: image.png
+kicker: Filosofia
 ---
 
 La relazione tra filosofia e arte è profonda e complessa, spaziando dalla ricerca del bello all'esplorazione del significato. In questo post, ci addentriamo in questo dialogo estetico per comprendere come l'arte e la filosofia si influenzino a vicenda.

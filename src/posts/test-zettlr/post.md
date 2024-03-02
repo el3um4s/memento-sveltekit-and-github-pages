@@ -7,6 +7,7 @@ categories:
   - Filosofia Classica
   - Filosofia Moderna
 published: true
+kicker: Coding
 ---
 
 Zettlr è un'applicazione di scrittura open source progettata per ricercatori, studenti e scrittori. È particolarmente utile per coloro che lavorano su progetti complessi che richiedono la gestione di note, riferimenti e documenti. **Zettlr** integra funzionalità di elaborazione di testi con strumenti avanzati di gestione delle note, consentendo agli utenti di organizzare i loro appunti, scrivere documenti e esportarli in vari formati, inclusi PDF, HTML e Word.

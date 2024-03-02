@@ -36,18 +36,17 @@
 		<p class="date">
 			Published at {formatDate(data.meta.date)}
 		</p>
+
+		<!-- Tags -->
+		<div class="tags">
+			{#each data.meta.categories as category}
+				<span class="tag">&num;{category}</span>
+			{/each}
+		</div>
 	</hgroup>
-
-	<!-- Tags -->
-	<div class="tags">
-		{#each data.meta.categories as category}
-			<span class="tag">&num;{category}</span>
-		{/each}
-	</div>
-
 	<!-- Cover Image -->
 	{#if data.meta.cover}
-		<div class="cover-image w-full">
+		<div class="cover">
 			{#if dev}
 				{#await import(/* @vite-ignore */ `/src/posts/${data.url}/${data.meta.cover}`) then { default: src }}
 					<img {src} alt={data.meta.title} loading="lazy" />

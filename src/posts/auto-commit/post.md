@@ -7,6 +7,7 @@ categories:
   - Filosofia Classica
   - Filosofia Moderna
 published: true
+kicker: Coding
 ---
 
 ![Immagine che contiene testo, schermata, software, Software multimediale Descrizione generata automaticamente](./9be16c3b1799ea7396ee9beaae6a1446.png)

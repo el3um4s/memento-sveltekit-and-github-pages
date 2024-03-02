@@ -7,6 +7,7 @@ categories:
   - Epistemologia
 published: true
 cover: Screenshot_1.png
+kicker: Filosofia
 ---
 
 La filosofia è sempre stata guidata da grandi domande che sfidano il nostro modo di pensare e vedere il mondo. In questo post, ci immergeremo in alcune di queste domande fondamentali che hanno intrigato l'umanità per secoli.

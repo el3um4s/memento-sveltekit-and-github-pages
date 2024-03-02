@@ -7,6 +7,7 @@ categories:
   - Società
 published: true
 cover: 'filosofia politica.png'
+kicker: Filosofia
 ---
 
 La filosofia politica si occupa di domande fondamentali riguardanti la società, il governo e i diritti umani. In questo post, ci immergiamo nei temi centrali di libertà, potere e giustizia.

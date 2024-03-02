@@ -7,6 +7,7 @@ categories:
   - Tecnologia
 published: true
 cover: image.png
+kicker: Filosofia
 ---
 
 L'avvento dell'era digitale ha portato con sé nuove e complesse questioni etiche che la filosofia è chiamata a esplorare. In questo post, esaminiamo come i filosofi moderni affrontano le sfide morali poste dalla tecnologia avanzata.
