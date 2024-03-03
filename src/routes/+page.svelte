@@ -1,9 +1,5 @@
 <script lang="ts">
-	import { flip } from 'svelte/animate';
-	import { quintOut } from 'svelte/easing';
-	import { base } from '$app/paths';
-	import { page } from '$app/stores';
-
+	import { slide } from 'svelte/transition';
 	import * as config from '$lib/config';
 
 	import PostPreview from '$lib/components/custom/post-preview.svelte';
@@ -14,7 +10,7 @@
 
 	let totalPosts: Post[] = data.posts;
 	// let currentPage = $derived(parseInt(data.page ?? '0'));
-	let currentPage = $derived(parseInt($page.url.searchParams.get('page') ?? '0'));
+	let currentPage = $state(0);
 	let totalPages = Math.ceil(totalPosts.length / config.pagination);
 	let start = $derived(currentPage * config.pagination);
 	let end = $derived(
@@ -35,7 +31,7 @@
 <section class="list-posts">
 	<ul class="list">
 		{#each posts as post (post.slug)}
-			<li class="post" animate:flip={{ easing: quintOut }}>
+			<li class="post" transition:slide>
 				<PostPreview {post}></PostPreview>
 			</li>
 		{/each}
@@ -43,15 +39,17 @@
 </section>
 
 <!-- Pagination -->
-<div>
-	{#if previousPage > 0}
-		<a href="{base}/p/{previousPage}">Previous</a>
-	{/if}
-	{#if previousPage == 0}
-		<a href="{base}/">Previous</a>
-	{/if}
-
-	{#if nextPage >= 0}
-		<a href="{base}/p/{nextPage}">Next</a>
-	{/if}
-</div>
+<section class=" flex justify-between items-center px-4 py-3">
+	<div class="hidden sm:block">
+		Showing <span class="font-semibold">{start + 1}</span> to
+		<span class="font-semibold">{end + 1}</span> results
+	</div>
+	<div class="flex gap-2">
+		{#if previousPage >= 0}
+			<button on:click={() => currentPage--}>Previous</button>
+		{/if}
+		{#if nextPage >= 0}
+			<button on:click={() => currentPage++}>Next</button>
+		{/if}
+	</div>
+</section>
