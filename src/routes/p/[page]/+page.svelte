@@ -2,7 +2,6 @@
 	import { flip } from 'svelte/animate';
 	import { quintOut } from 'svelte/easing';
 	import { base } from '$app/paths';
-	import { page } from '$app/stores';
 
 	import * as config from '$lib/config';
 
@@ -11,10 +10,11 @@
 
 	// export let data;
 	let { data } = $props();
+	console.log(data);
 
 	let totalPosts: Post[] = data.posts;
-	// let currentPage = $derived(parseInt(data.page ?? '0'));
-	let currentPage = $derived(parseInt($page.url.searchParams.get('page') ?? '0'));
+	let currentPage = $derived(parseInt(data.page ?? '0'));
+	// let currentPage = $derived(parseInt($page.url.searchParams.get('page') ?? '0'));
 	let totalPages = Math.ceil(totalPosts.length / config.pagination);
 	let start = $derived(currentPage * config.pagination);
 	let end = $derived(
