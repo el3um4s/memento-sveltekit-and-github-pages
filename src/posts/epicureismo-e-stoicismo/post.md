@@ -12,7 +12,7 @@ kicker: Filosofia
 
 L'Epicureismo e lo Stoicismo, due scuole di pensiero dell'antica Grecia e Roma, offrono lezioni di vita ancora rilevanti nel mondo moderno. In questo post, esploriamo come questi insegnamenti antichi possono essere applicati oggi.
 
-![](./epicureismo.png)
+![epicureismo](./epicureismo.png)
 
 L'Epicureismo, fondato da Epicuro, insegna che la chiave della felicità sta nel piacere, inteso come assenza di dolore e disturbo mentale. Questa filosofia suggerisce che dovremmo cercare piaceri moderati e sostenibili, valorizzando l'amicizia e la riflessione personale.
 

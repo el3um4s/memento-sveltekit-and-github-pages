@@ -10,4 +10,4 @@ published: true
 
 Oggi condivido una ricetta speciale: la pasta fatta in casa come la faceva la mia nonna. Un piatto ricco di amore e tradizione.
 
-![Image](./image.jpg)
+![ricette](./image.jpg)

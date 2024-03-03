@@ -11,7 +11,7 @@
 <header>
 	<nav>
 		<!-- Title -->
-		<a href="{base}/" class="title">
+		<a href={config.url} class="title">
 			<Logo />
 			<span>{config.title}</span>
 		</a>
@@ -24,23 +24,23 @@
 		<!-- Navigation -->
 		<ul>
 			<li>
-				<a href="{base}/about">
+				<a href="{config.url}/about">
 					<About />
 					<span>About</span>
 				</a>
 			</li>
 			<li>
-				<a href="{base}/contact">
+				<a href="{config.url}/contact">
 					<Contact />
 					<span>Contact</span>
 				</a>
 			</li>
-			<!-- <li>
-				<a href="{base}/rss.xml" target="_blank">
+			<li>
+				<a href="{config.url}/rss.xml" target="_blank">
 					<RSS />
 					<span>RSS</span>
 				</a>
-			</li> -->
+			</li>
 		</ul>
 	</nav>
 </header>

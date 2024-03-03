@@ -3,6 +3,13 @@ export const prerender = true;
 import * as config from '$lib/config';
 import type { Post } from '$lib/types';
 
+const sanitizeRSS = (s: string): string => {
+	let newString = s.replaceAll('&', '&amp;');
+	newString = newString.replaceAll('<', '$lt');
+	newString = newString.replaceAll('>', '&gt');
+	return newString;
+};
+
 export async function GET({ fetch }) {
 	const response = await fetch('api/posts');
 	const posts: Post[] = await response.json();
@@ -20,10 +27,10 @@ export async function GET({ fetch }) {
 					.map(
 						(post) => `
 						<item>
-							<title>${post.title}</title>
-							<description>${post.description}</description>
-							<link>${config.url}${post.slug}</link>
-							<guid isPermaLink="true">${config.url}${post.slug}</guid>
+							<title>${sanitizeRSS(post.title)}</title>
+							<description>${sanitizeRSS(post.description)}</description>
+							<link>${config.url}/${post.slug}</link>
+							<guid isPermaLink="true">${config.url}/${post.slug}</guid>
 							<pubDate>${new Date(post.date).toUTCString()}</pubDate>
 						</item>
 					`

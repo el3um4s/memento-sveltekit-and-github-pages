@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { formatDate } from '$lib/utils';
 	import * as config from '$lib/config';
 	import { dev } from '$app/environment';
@@ -14,7 +15,6 @@
 		<meta
 			property="og:image"
 			content="{config.repository}/raw/main/src/posts/{data.url}/{data.meta.cover}"
-			data-rh="true"
 		/>
 	{/if}
 	<meta name="author" content="Samuele C. De Tomasi" data-rh="true" />
@@ -39,8 +39,8 @@
 
 		<!-- Tags -->
 		<div class="tags">
-			{#each data.meta.categories as category}
-				<span class="tag">&num;{category}</span>
+			{#each data.meta.categories as tag}
+				<a href="{base}/category/{tag}" class="tag">#{tag}</a>
 			{/each}
 		</div>
 	</hgroup>

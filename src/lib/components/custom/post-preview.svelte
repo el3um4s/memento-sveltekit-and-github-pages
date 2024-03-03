@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { formatDate } from '$lib/utils';
 	import * as config from '$lib/config';
 	import type { Post } from '$lib/types';
@@ -7,10 +8,9 @@
 	export let post: Post;
 </script>
 
-<!-- <li class="post"> -->
 <section>
 	{#if post.cover}
-		<a href={post.slug} class="cover">
+		<a href="{base}/{post.slug}" class="cover">
 			{#if dev}
 				{#await import(/* @vite-ignore */ `/src/posts/${post.slug}${post.cover}`) then { default: src }}
 					<img {src} alt={post.title} loading="lazy" />
@@ -29,15 +29,14 @@
 			<span class="kicker">{post.kicker}</span>
 		{/if}
 		<h3 class="title">
-			<a href={post.slug}>{post.title}</a>
+			<a href="{base}/{post.slug}">{post.title}</a>
 		</h3>
 		<p class="date">{formatDate(post.date)}</p>
 		<p class="description">{post.description}</p>
 		<div class="tags">
 			{#each post.categories as tag}
-				<span class="tag">#{tag}</span>
+				<a href="{base}/category/{tag}" class="tag">#{tag}</a>
 			{/each}
 		</div>
 	</div>
-	<!-- </li> -->
 </section>
