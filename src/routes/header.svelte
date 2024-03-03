@@ -1,11 +1,25 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import * as config from '$lib/config';
-	import { base } from '$app/paths';
 
 	import About from '$lib/icons/about.svelte';
 	import Contact from '$lib/icons/contact.svelte';
 	import RSS from '$lib/icons/rss.svelte';
 	import Logo from '$lib/icons/logo.svelte';
+	import Dark from '$lib/icons/dark.svelte';
+	import Light from '$lib/icons/light.svelte';
+
+	let theme = browser
+		? window.localStorage.getItem('theme') ?? window.localStorage.setItem('theme', 'light')
+		: 'light';
+
+	if (browser) {
+		if (theme == 'dark') {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	}
 </script>
 
 <header>
@@ -40,6 +54,30 @@
 					<RSS />
 					<span>RSS</span>
 				</a>
+			</li>
+
+			<li>
+				{#if theme == 'dark'}
+					<button
+						on:click={() => {
+							theme = 'light';
+							window.localStorage.setItem('theme', 'light');
+							document.documentElement.classList.remove('dark');
+						}}
+					>
+						<Dark />
+					</button>
+				{:else}
+					<button
+						on:click={() => {
+							theme = 'dark';
+							window.localStorage.setItem('theme', 'dark');
+							document.documentElement.classList.add('dark');
+						}}
+					>
+						<Light />
+					</button>
+				{/if}
 			</li>
 		</ul>
 	</nav>
