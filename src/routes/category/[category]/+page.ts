@@ -1,5 +1,3 @@
-// import { error } from '@sveltejs/kit';
-
 export async function load({ fetch, params }) {
 	const { category } = params;
 
