@@ -34,20 +34,4 @@
 		end={data.end + 1}
 		url="{config.url}/column/{data.column}"
 	></Pagination>
-
-	<!-- <section class=" flex justify-between items-center px-4 py-3">
-		<div class="hidden sm:block">
-			Showing <span class="font-semibold">{data.start + 1}</span> to
-			<span class="font-semibold">{data.end + 1}</span> results
-		</div>
-		<div class="flex gap-2">
-			{#if data.currentPage >= 1}
-				<a href="{config.url}/column/{data.column}/{data.currentPage - 1}">Previous</a>
-			{/if}
-
-			{#if data.nextPage >= 1}
-				<a href="{config.url}/column/{data.column}/{data.nextPage}">Next</a>
-			{/if}
-		</div>
-	</section> -->
 {/if}
