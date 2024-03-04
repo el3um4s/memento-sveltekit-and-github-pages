@@ -24,7 +24,11 @@
 <article class="single-post">
 	<!-- Title -->
 	<hgroup>
-		<p class="column">{data.meta.column}</p>
+		{#if data.meta.colum}
+			<p class="column">
+				<a href="{base}/column/{data.meta.column}" class="column">{data.meta.column}</a>
+			</p>
+		{/if}
 		<h1 class="title">
 			{data.meta.title}
 		</h1>

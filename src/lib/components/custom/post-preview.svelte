@@ -26,7 +26,6 @@
 	{/if}
 	<div class="p-4">
 		{#if post.column}
-			<!-- <span class="column">{post.column}</span> -->
 			<a href="{base}/column/{post.column}" class="column">{post.column}</a>
 		{/if}
 		<h3 class="title">
