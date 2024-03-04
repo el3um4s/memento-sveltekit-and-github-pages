@@ -3,6 +3,7 @@
 	import * as config from '$lib/config';
 
 	import PostPreview from '$lib/components/custom/post-preview.svelte';
+	import Pagination from '$lib/components/custom/pagination.svelte';
 	import type { Post } from '$lib/types';
 
 	// export let data;
@@ -42,20 +43,16 @@
 </section>
 
 <!-- Pagination -->
-<section class=" flex justify-between items-center px-4 py-3">
+<Pagination currentPage={0} nextPage={1} start={1} end={config.pagination} url="{config.url}/page"
+></Pagination>
+<!-- <section class=" flex justify-between items-center px-4 py-3">
 	<div class="hidden sm:block">
 		Showing <span class="font-semibold">1</span> to
 		<span class="font-semibold">{config.pagination}</span> results
 	</div>
 	<div class="flex gap-2">
-		<!-- {#if previousPage >= 0}
-			<button on:click={() => currentPage--}>Previous</button>
-		{/if}
-		{#if nextPage >= 0}
-			<button on:click={() => currentPage++}>Next</button>
-		{/if} -->
 		{#if nextPage}
 			<a href="{config.url}/page/1">Next</a>
 		{/if}
 	</div>
-</section>
+</section> -->

@@ -2,6 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import * as config from '$lib/config';
 	import PostPreview from '$lib/components/custom/post-preview.svelte';
+	import Pagination from '$lib/components/custom/pagination.svelte';
 
 	// export let data;
 	let { data } = $props();
@@ -26,7 +27,15 @@
 	</section>
 
 	<!-- Pagination -->
-	<section class=" flex justify-between items-center px-4 py-3">
+	<Pagination
+		currentPage={data.currentPage}
+		nextPage={data.nextPage}
+		start={data.start + 1}
+		end={data.end + 1}
+		url="{config.url}/column/{data.column}"
+	></Pagination>
+
+	<!-- <section class=" flex justify-between items-center px-4 py-3">
 		<div class="hidden sm:block">
 			Showing <span class="font-semibold">{data.start + 1}</span> to
 			<span class="font-semibold">{data.end + 1}</span> results
@@ -40,5 +49,5 @@
 				<a href="{config.url}/column/{data.column}/{data.nextPage}">Next</a>
 			{/if}
 		</div>
-	</section>
+	</section> -->
 {/if}
