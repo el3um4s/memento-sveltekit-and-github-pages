@@ -7,7 +7,7 @@ categories:
   - Innovazione
 published: true
 cover: image.png
-kicker: Filosofia
+column: Filosofia
 ---
 
 La filosofia ha il potere di cambiare il mondo, e la storia è ricca di filosofi le cui idee hanno avuto un impatto profondo sulla società. In questo post, mettiamo in luce alcuni dei pensatori più rivoluzionari e le loro idee trasformative.

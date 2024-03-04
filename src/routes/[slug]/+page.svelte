@@ -24,7 +24,7 @@
 <article class="single-post">
 	<!-- Title -->
 	<hgroup>
-		<p class="kicker">kicker</p>
+		<p class="column">{data.meta.column}</p>
 		<h1 class="title">
 			{data.meta.title}
 		</h1>

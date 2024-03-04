@@ -7,7 +7,7 @@ categories:
   - Coscienza
 published: true
 cover: error.png
-kicker: Coding
+column: Coding
 ---
 
 **Branch "x" is not allowed to deploy to github-pages due to environment protection rules.**

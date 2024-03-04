@@ -25,8 +25,9 @@
 		</a>
 	{/if}
 	<div class="p-4">
-		{#if post.kicker}
-			<span class="kicker">{post.kicker}</span>
+		{#if post.column}
+			<!-- <span class="column">{post.column}</span> -->
+			<a href="{base}/column/{post.column}" class="column">{post.column}</a>
 		{/if}
 		<h3 class="title">
 			<a href="{base}/{post.slug}">{post.title}</a>

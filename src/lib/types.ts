@@ -8,5 +8,5 @@ export type Post = {
 	categories: Categories[];
 	published: boolean;
 	cover?: string;
-	kicker?: string;
+	column?: string;
 };

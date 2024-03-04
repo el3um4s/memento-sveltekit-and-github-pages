@@ -7,7 +7,7 @@ categories:
   - Filosofia Contemporanea
   - Società
 published: true
-kicker: Filosofia
+column: Filosofia
 ---
 
 ![a](./philosophy_pastel_image.png)

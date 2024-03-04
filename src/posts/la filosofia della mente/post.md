@@ -7,7 +7,7 @@ categories:
   - Coscienza
 published: true
 cover: cover.png
-kicker: Filosofia
+column: Filosofia
 ---
 
 La filosofia della mente è un campo affascinante che affronta alcune delle domande più profonde sull'esistenza umana. In questo post, esaminiamo le questioni chiave che definiscono questa branca della filosofia.
