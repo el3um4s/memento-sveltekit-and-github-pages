@@ -1,7 +1,7 @@
 ---
 title: Libri
 description: Libri da leggere
-date: '2024-09-01'
+date: '2023-09-01'
 categories:
   - Filosofia della Mente
   - Coscienza

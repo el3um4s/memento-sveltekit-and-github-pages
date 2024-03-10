@@ -12,12 +12,12 @@
 	{#if post.cover}
 		<a href="{base}/{post.slug}" class="cover">
 			{#if dev}
-				{#await import(/* @vite-ignore */ `/src/posts/${post.slug}${post.cover}`) then { default: src }}
+				{#await import(/* @vite-ignore */ `/src/posts/${post.src}/${post.cover}`) then { default: src }}
 					<img {src} alt={post.title} loading="lazy" />
 				{/await}
 			{:else}
 				<img
-					src="{config.repository}/raw/main/src/posts/{post.slug}{post.cover}"
+					src="{config.repository}/raw/main/src/posts/{post.src}/{post.cover}"
 					alt={post.title}
 					loading="lazy"
 				/>

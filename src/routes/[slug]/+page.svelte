@@ -14,7 +14,7 @@
 	{#if data.meta.cover}
 		<meta
 			property="og:image"
-			content="{config.repository}/raw/main/src/posts/{data.url}/{data.meta.cover}"
+			content="{config.repository}/raw/main/src/posts/{data.src}/{data.meta.cover}"
 		/>
 	{/if}
 	<meta name="author" content="Samuele C. De Tomasi" data-rh="true" />
@@ -52,12 +52,12 @@
 	{#if data.meta.cover}
 		<div class="cover">
 			{#if dev}
-				{#await import(/* @vite-ignore */ `/src/posts/${data.url}/${data.meta.cover}`) then { default: src }}
+				{#await import(/* @vite-ignore */ `/src/posts/${data.src}/${data.meta.cover}`) then { default: src }}
 					<img {src} alt={data.meta.title} loading="lazy" />
 				{/await}
 			{:else}
 				<img
-					src="{config.repository}/raw/main/src/posts/{data.url}/{data.meta.cover}"
+					src="{config.repository}/raw/main/src/posts/{data.src}/{data.meta.cover}"
 					alt={data.meta.title}
 					loading="lazy"
 				/>
