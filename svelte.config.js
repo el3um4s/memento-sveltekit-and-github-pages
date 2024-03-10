@@ -74,9 +74,9 @@ const config = {
 		adapter: adapter({
 			fallback: '404.html'
 		}),
-		prerender: {
-			handleHttpError: 'warn'
-		},
+		// prerender: {
+		// 	handleHttpError: 'warn'
+		// },
 		paths: {
 			base: process.argv.includes('dev') ? '' : ''
 		},

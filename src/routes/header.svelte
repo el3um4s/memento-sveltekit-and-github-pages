@@ -31,9 +31,9 @@
 		</a>
 
 		<!-- Search Box -->
-		<div class="search">
+		<!-- <div class="search">
 			<input type="search" placeholder="Search..." />
-		</div>
+		</div> -->
 
 		<!-- Navigation -->
 		<ul>
